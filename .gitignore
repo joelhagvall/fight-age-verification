@@ -1,0 +1,53 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+dist-ssr/
+.output/
+.nitro/
+.vinxi/
+.tanstack/
+.wrangler/
+
+# Test and coverage output
+coverage/
+test-results/
+playwright-report/
+blob-report/
+lighthouse-report/
+.vitest/
+*.tsbuildinfo
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+bun-debug.log*
+
+# Environment files
+.env
+.env.*
+!.env.example
+*.local
+
+# Editor and OS files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Tool caches
+.cache/
+.vite/
+.eslintcache
+.stylelintcache
+__unconfig*
+
+# Local scratch files
+.cta.json
+todos.json
+AGENTS.md

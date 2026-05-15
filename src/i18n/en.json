@@ -1,0 +1,454 @@
+{
+  "meta": {
+    "title": "Fight Age Verification",
+    "description": "Make your voice heard against mandatory age checks and ID requirements that restrict children’s and young people’s rights online.",
+    "keywords": "age verification, online ID checks, social media age limit, children’s rights online, digital freedom, freedom of expression, EU age verification, Sweden social media age limit"
+  },
+  "nav": {
+    "brand": "Fight Age Verification",
+    "mark": "ID",
+    "skipContent": "Skip to content",
+    "issue": "Status",
+    "why": "Why",
+    "targets": "Email",
+    "sources": "Sources",
+    "language": "SV",
+    "menuOpen": "Open menu",
+    "menuClose": "Close menu",
+    "themeLight": "Use light mode",
+    "themeDark": "Use dark mode"
+  },
+  "hero": {
+    "title": "The internet should not require ID.",
+    "lead": "Governments are moving toward mandatory age checks online. In practice, that can mean showing ID to read, create accounts, or take part online.",
+    "primary": "Make your voice heard",
+    "secondary": "Why this matters"
+  },
+  "definition": {
+    "title": "What is it?",
+    "lead": "Age verification means a service checks how old you are. That can sound simple, but it often turns into an ID check.",
+    "items": [
+      "It often starts with child safety.",
+      "It can require ID, app verification, face checks, or similar tools.",
+      "Once the system exists, it can spread to more sites and services."
+    ]
+  },
+  "spread": {
+    "title": "How this spreads",
+    "lead": "Age checks rarely stay limited to one problem. Once ID checks become normal, the line can keep moving.",
+    "items": [
+      {
+        "label": "First",
+        "text": "Social media and apps used by children."
+      },
+      {
+        "label": "Then",
+        "text": "Forums, communities, search, and user-generated content."
+      },
+      {
+        "label": "Next",
+        "text": "News, debate, learning resources, and niche interests."
+      },
+      {
+        "label": "Eventually",
+        "text": "ID becomes a normal key for using the internet."
+      }
+    ],
+    "adult": "This affects adults too. Age checks can make lawful content, private browsing, and anonymous participation depend on showing ID."
+  },
+  "issue": {
+    "title": "It is happening now",
+    "lead": "This is not a distant idea. The EU is building tools, and countries around the world are already moving. What starts as child safety can become ID checks for more and more of the internet.",
+    "items": [
+      {
+        "label": "EU",
+        "text": "The Commission is pushing an EU age verification app, and the European Parliament has proposed a harmonised minimum age of 16 for social media.",
+        "sources": [
+          {
+            "label": "EU app",
+            "href": "https://commission.europa.eu/news-and-media/news/european-age-verification-app-keep-children-safe-online-2026-04-15_en"
+          },
+          {
+            "label": "European Parliament",
+            "href": "https://www.europarl.europa.eu/news/en/press-room/20251120IPR31496/"
+          }
+        ]
+      },
+      {
+        "label": "UK and Australia",
+        "text": "Australia is implementing social media minimum age rules, while the UK is pushing age assurance through the Online Safety Act.",
+        "sources": [
+          {
+            "label": "Australia",
+            "href": "https://www.infrastructure.gov.au/media-communications/internet/online-safety/social-media-minimum-age"
+          },
+          {
+            "label": "GOV.UK",
+            "href": "https://www.gov.uk/government/news/keeping-children-safe-online-changes-to-the-online-safety-act-explained"
+          }
+        ]
+      },
+      {
+        "label": "Sweden",
+        "text": "The government is investigating an age limit for children’s use of social media. The Social Democrats have also proposed a strict 15-year limit with ID checks.",
+        "sources": [
+          {
+            "label": "Inquiry",
+            "href": "https://www.regeringen.se/rattsliga-dokument/kommittedirektiv/2025/10/dir.-202591"
+          },
+          {
+            "label": "S proposal",
+            "href": "https://www.socialdemokraterna.se/nyheter/nyheter/2025-10-23-s-foreslar-skarp-15-arsgrans-for-sociala-medier-starkt-skydd-mot-deepfakes-och-en-nationell-natpolis"
+          }
+        ]
+      }
+    ]
+  },
+  "questions": {
+    "kicker": "The argument",
+    "title": "Why ID checks miss the point",
+    "lead": "Children should be protected online. But the answer cannot be to make ID checks the key to reading, learning, creating, or joining communities.",
+    "items": [
+      {
+        "question": "What are they trying to do?",
+        "answer": "Make it harder for children to access social media or content seen as unsuitable."
+      },
+      {
+        "question": "What is the problem?",
+        "answer": "Age checks sound simple, but they often become identity checks. Private reading, account creation, and participation can start depending on ID."
+      },
+      {
+        "question": "Who is affected?",
+        "answer": "Young people seeking support, learning, following culture, or building something. Also adults who do not want lawful content, private browsing, or political debate to require ID."
+      },
+      {
+        "question": "What should be done instead?",
+        "answer": "Target the harm directly: grooming, exploitation, fraud, harassment, poor moderation, and addictive or manipulative design."
+      }
+    ]
+  },
+  "scenarios": {
+    "kicker": "Scenarios",
+    "title": "Who is actually affected?",
+    "lead": "An ID requirement sounds technical. In practice, it affects who can read, create, ask, debate, build, and belong.",
+    "items": [
+      {
+        "id": "bullied",
+        "label": "The person who is struggling",
+        "title": "The person who needs anonymous help",
+        "body": "Someone who is struggling may need to seek support without first identifying themselves to a platform."
+      },
+      {
+        "id": "engineer",
+        "label": "The person who wants to learn",
+        "title": "The person who wants to learn online",
+        "body": "Programming, AI, music, and games are often learned through open resources. ID checks make normal curiosity harder."
+      },
+      {
+        "id": "visionary",
+        "label": "The visionary",
+        "title": "The person who wants to start something",
+        "body": "Young people should be able to launch side projects, create music, sell digital services, and build communities."
+      },
+      {
+        "id": "know",
+        "label": "The curious person",
+        "title": "The person who wants to understand the world",
+        "body": "Young people need access to news, culture, politics, and niche interests to become genuinely informed."
+      }
+    ]
+  },
+  "targets": {
+    "title": "Make your voice heard",
+    "lead": "Choose which decision-makers to contact. Send the draft as it is, or edit it freely so it says what you want to say.",
+    "selectedCount": "selected",
+    "continue": "Review email",
+    "back": "Back",
+    "button": "Open email",
+    "customiseStep": "Customise",
+    "sendStep": "Send",
+    "customiseTitle": "Customise your message",
+    "templateLabel": "Choose email length",
+    "templateShort": "Short",
+    "templateLong": "Detailed",
+    "nameReminder": "Add your name at the bottom before sending.",
+    "previewTitle": "Email template",
+    "previewLead": "Review recipients and text. You can send it as it is or edit everything in your mail app before sending.",
+    "recipientsTitle": "Recipients",
+    "countryLabel": "Country/region",
+    "allCountries": "🌍 All recipients",
+    "noSelection": "Select at least one recipient first.",
+    "toLabel": "Recipients",
+    "moreRecipients": "more",
+    "subjectLabel": "Subject",
+    "messageLabel": "Message",
+    "subject": "Protect children online, but not through general ID checks",
+    "copyBody": "Copy text",
+    "copyRecipients": "Copy recipients",
+    "copied": "Copied.",
+    "copyFailed": "Could not copy. Select the text manually.",
+    "shortBody": "Hello,\n\nI am writing to ask you to oppose mandatory age verification and general ID checks for using the internet.\n\nChildren should be protected online. But the answer cannot be to make ID checks the key to reading, learning, seeking support, joining communities, or taking part in debate.\n\nThis affects children and adults. Young people need room to ask for help, learn, create, follow news, build projects, and participate in society. Adults should not have to show ID to read lawful content, search privately, or take part in political debate.\n\nPlease support alternatives that target actual harm: grooming, exploitation, fraud, harassment, unsafe defaults, addictive or manipulative design, and weak enforcement. Child safety matters, but it should not be used to remove privacy, anonymity, and free expression online.\n\nKind regards,\n[name]",
+    "body": "Hello,\n\nI am writing to ask you to oppose mandatory age verification and general ID checks for using the internet.\n\nChildren should be protected online. But general ID checks are the wrong route. They risk making the internet less private, less free, and harder to use for both young people and adults.\n\nFor young people, anonymous access to information, support, and communities can matter. That includes someone being bullied, someone unsafe at home, or someone who needs to ask about something sensitive. It also includes young people learning programming, music, AI, game development, or trying to start a side project. Much of that happens through open resources and forums.\n\nFor adults, age verification can mean that lawful content, private information seeking, and political participation start requiring ID. It also creates risks: data breaches, surveillance, profiling, and systems that later get used for more than they were built for.\n\nI ask you to support solutions that target actual harm:\n\n- grooming, exploitation, fraud, and harassment,\n- better reporting, moderation, and law enforcement,\n- safer defaults and less addictive or manipulative design,\n- privacy-by-design without centralised ID databases,\n- children’s right to seek information, express themselves, learn, and participate online.\n\nChild safety must be taken seriously. But it must not become an argument for making the internet depend on identity checks.\n\nPlease say no to broad age verification and support alternatives that protect both children and fundamental freedoms.\n\nKind regards,\n[name]",
+    "groups": [
+      {
+        "title": "🇪🇺 EU",
+        "people": [
+          {
+            "name": "Ursula von der Leyen",
+            "role": "President of the European Commission; presented the EU age verification app and is pushing a harmonised European approach",
+            "email": "Ursula.VON-DER-LEYEN@ec.europa.eu"
+          },
+          {
+            "name": "Henna Virkkunen",
+            "role": "European Commission Executive Vice-President for tech sovereignty, security and democracy; responsible for the EU age verification app",
+            "email": "cab-virkkunen-contact@ec.europa.eu"
+          },
+          {
+            "name": "Christel Schaldemose",
+            "role": "MEP and rapporteur for the European Parliament report calling for an EU-wide 16-year minimum age for social media",
+            "email": "christel.schaldemose@europarl.europa.eu"
+          },
+          {
+            "name": "Swedish Members of the European Parliament",
+            "role": "Reach Sweden’s 21 MEPs through the Parliament liaison office/list",
+            "email": "EPstockholm@europarl.europa.eu"
+          }
+        ]
+      },
+      {
+        "title": "🇸🇪 Sweden",
+        "people": [
+          {
+            "name": "Magdalena Andersson",
+            "role": "Leader of the Social Democrats, presented a strict 15-year social media age limit with ID requirements",
+            "email": "magdalena.andersson@riksdagen.se"
+          },
+          {
+            "name": "Anders Ygeman",
+            "role": "Social Democratic education spokesperson, presented requirements for strict identification when accounts are registered",
+            "email": "anders.ygeman@riksdagen.se"
+          },
+          {
+            "name": "Larry Söder",
+            "role": "Member of the Riksdag (KD), motion 2025/26:456 on reliable age identification",
+            "email": "larry.soder@riksdagen.se"
+          },
+          {
+            "name": "Jakob Forssmed",
+            "role": "Minister for Social Affairs, responsible minister for the Swedish inquiry on a social media age limit",
+            "email": "registrator@social.ministry.se"
+          },
+          {
+            "name": "Ulf Kristersson",
+            "role": "Prime Minister; the government has appointed the inquiry on a social media age limit",
+            "email": "registrator@primeminister.ministry.se"
+          }
+        ]
+      },
+      {
+        "title": "🇬🇧🇦🇺 UK / Australia",
+        "people": [
+          {
+            "name": "Anika Wells",
+            "role": "Australia's Minister for Communications, implementing the social media minimum age rules",
+            "email": "Anika.Wells.MP@aph.gov.au"
+          },
+          {
+            "name": "Liz Kendall",
+            "role": "UK Secretary of State for Science, Innovation and Technology; current minister responsible for DSIT and online safety policy",
+            "email": "correspondence@dsit.gov.uk"
+          }
+        ]
+      }
+    ]
+  },
+  "sources": {
+    "title": "Sources",
+    "items": [
+      {
+        "source": "Swedish Social Democrats",
+        "type": "Swedish politics",
+        "label": "S föreslår skarp 15-årsgräns för sociala medier, stärkt skydd mot deepfakes och en nationell nätpolis",
+        "href": "https://www.socialdemokraterna.se/nyheter/nyheter/2025-10-23-s-foreslar-skarp-15-arsgrans-for-sociala-medier-starkt-skydd-mot-deepfakes-och-en-nationell-natpolis"
+      },
+      {
+        "source": "Swedish Riksdag",
+        "type": "Member profile",
+        "label": "Riksdag: Magdalena Andersson (S)",
+        "href": "https://www.riksdagen.se/sv/ledamoter-och-partier/ledamot/magdalena-andersson_dcc2ab7d-3fc1-4a28-b3c7-be1679c047b3/"
+      },
+      {
+        "source": "Swedish Riksdag",
+        "type": "Member profile",
+        "label": "Riksdag: Anders Ygeman (S)",
+        "href": "https://www.riksdagen.se/sv/ledamoter-och-partier/ledamot/anders-ygeman_d7c3235d-83e4-11d4-ae60-0050040c9b55/"
+      },
+      {
+        "source": "Swedish Government",
+        "type": "Government inquiry",
+        "label": "En åldersgräns till skydd för barns hälsa och trygghet i digitala miljöer dir. 2025:91",
+        "href": "https://www.regeringen.se/rattsliga-dokument/kommittedirektiv/2025/10/dir.-202591"
+      },
+      {
+        "source": "Swedish Riksdag",
+        "type": "Motion",
+        "label": "Motion 2025/26:456 av Larry Söder (KD)",
+        "href": "https://data.riksdagen.se/dokumentstatus/HD02456.rix"
+      },
+      {
+        "source": "European Commission",
+        "type": "EU",
+        "label": "European age verification app to keep children safe online",
+        "href": "https://commission.europa.eu/news-and-media/news/european-age-verification-app-keep-children-safe-online-2026-04-15_en"
+      },
+      {
+        "source": "European Commission",
+        "type": "EU",
+        "label": "Commission urges Member States to rollout EU age verification app",
+        "href": "https://digital-strategy.ec.europa.eu/en/news/commission-urges-member-states-rollout-eu-age-verification-app"
+      },
+      {
+        "source": "European Commission",
+        "type": "EU",
+        "label": "Press statement by Ursula von der Leyen and Henna Virkkunen on the digital age verification app",
+        "href": "https://audiovisual.ec.europa.eu/en/media/photo/P-069494"
+      },
+      {
+        "source": "European Parliament",
+        "type": "MEP profile",
+        "label": "Christel Schaldemose",
+        "href": "https://www.europarl.europa.eu/meps/en/37312/x/home"
+      },
+      {
+        "source": "Australian Government",
+        "type": "International",
+        "label": "Social media minimum age",
+        "href": "https://www.infrastructure.gov.au/media-communications/internet/online-safety/social-media-minimum-age"
+      },
+      {
+        "source": "UK Parliament",
+        "type": "Contact",
+        "label": "Liz Kendall MP",
+        "href": "https://members.parliament.uk/member/4026/contact"
+      },
+      {
+        "source": "GOV.UK",
+        "type": "United Kingdom",
+        "label": "Keeping children safe online: changes to the Online Safety Act explained",
+        "href": "https://www.gov.uk/government/news/keeping-children-safe-online-changes-to-the-online-safety-act-explained"
+      },
+      {
+        "source": "Ofcom",
+        "type": "United Kingdom",
+        "label": "Protection of children duties under the Online Safety Act",
+        "href": "https://www.ofcom.org.uk/online-safety/protecting-children/protection-of-children-duties-under-the-online-safety-act"
+      },
+      {
+        "source": "European Parliament",
+        "type": "EU",
+        "label": "Children should be at least 16 to access social media, say MEPs",
+        "href": "https://www.europarl.europa.eu/news/en/press-room/20251120IPR31496/"
+      }
+    ]
+  },
+  "footer": {
+    "about": "About",
+    "privacy": "Privacy",
+    "contact": "Contact",
+    "source": "Source code",
+    "sourceHref": "https://github.com/joelhagvall/fight-age-verification",
+    "copyright": "Copyright {year} Joel Hägvall."
+  },
+  "pages": {
+    "back": "Back",
+    "about": {
+      "kicker": "About",
+      "title": "Why this page exists",
+      "body": "Fight Age Verification is a simple campaign page for understanding and challenging broad ID requirements on the internet. The point is not to dismiss child safety, but to show that protection can be built without making the whole web depend on identity checks.",
+      "sections": [
+        {
+          "title": "What the site does",
+          "body": "The site summarizes the problem, shows who is affected, and makes it easy to contact decision-makers with an editable email."
+        },
+        {
+          "title": "What the site is not",
+          "body": "This is not legal advice, a news service, or an age verification tool. It collects arguments and sources for advocacy and discussion."
+        },
+        {
+          "title": "Core position",
+          "body": "Children should be protected online. But protection should target real harm, not make ordinary internet use depend on general identity checks."
+        },
+        {
+          "title": "Built by",
+          "body": "The site is built by Joel Hägvall.",
+          "link": "https://joelhagvall.com",
+          "href": "https://joelhagvall.com"
+        },
+        {
+          "title": "Open source",
+          "body": "The source code is public for review, improvements, and suggestions.",
+          "link": "https://github.com/joelhagvall/fight-age-verification",
+          "href": "https://github.com/joelhagvall/fight-age-verification"
+        }
+      ]
+    },
+    "privacy": {
+      "kicker": "Privacy",
+      "title": "Privacy policy",
+      "body": "The site is built to collect as little information as possible. It does not need login, a server database, or identity checks.",
+      "sections": [
+        {
+          "title": "No account or ID collection",
+          "body": "You do not need to create an account, log in, or identify yourself to use the site. The site does not attempt to verify age or identity."
+        },
+        {
+          "title": "Local preferences",
+          "body": "Choices such as language, theme, and selected recipients may be saved locally in your browser. They are not sent to a server by this site."
+        },
+        {
+          "title": "Email function",
+          "body": "When you open the email, your own mail client is used. Recipients, subject, and text are passed to the mail client through a mailto link."
+        },
+        {
+          "title": "Vercel Analytics",
+          "body": "The site uses Vercel Analytics for basic, aggregate traffic stats after deployment. It is not used for accounts, forms, or identity collection."
+        }
+      ]
+    },
+    "contact": {
+      "kicker": "Contact",
+      "title": "Contact",
+      "body": "Have better research, more recipients, or an improved email template? Send a suggestion.",
+      "sections": [
+        {
+          "title": "What to send",
+          "body": "Useful suggestions include stronger sources, corrections, more relevant recipients, or clearer wording."
+        },
+        {
+          "title": "Keep it practical",
+          "body": "Concrete suggestions with a source link are easiest to review and add."
+        },
+        {
+          "title": "Built by",
+          "body": "The site is built by Joel Hägvall. For direct contact with the person behind the project, use the links below.",
+          "link": "https://joelhagvall.com",
+          "href": "https://joelhagvall.com"
+        },
+        {
+          "title": "LinkedIn",
+          "body": "Connect with Joel on LinkedIn.",
+          "link": "https://www.linkedin.com/in/joel-hägvall-810601147/",
+          "href": "https://www.linkedin.com/in/joel-h%C3%A4gvall-810601147/"
+        },
+        {
+          "title": "Source code",
+          "body": "The project is open source. You can read the code or suggest changes on GitHub.",
+          "link": "https://github.com/joelhagvall/fight-age-verification",
+          "href": "https://github.com/joelhagvall/fight-age-verification"
+        }
+      ],
+      "link": "Contact on GitHub",
+      "href": "https://github.com/joelhagvall/fight-age-verification"
+    }
+  }
+}
