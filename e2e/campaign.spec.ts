@@ -40,7 +40,7 @@ test('renders campaign page and toggles language and theme', async ({ page }) =>
   await expect(page.getByRole('button', { name: 'Copy text' })).toBeVisible()
   await expect(page.getByText('I am writing to ask you to oppose mandatory')).toBeVisible()
   await expect(page.getByRole('button', { name: 'Copy recipients' })).toBeVisible()
-  await expect(page.getByRole('link', { name: 'Open email' })).toHaveAttribute(
+  await expect(page.getByRole('link', { name: 'Open mail app' })).toHaveAttribute(
     'href',
     /mailto:/
   )
