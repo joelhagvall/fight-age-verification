@@ -20,7 +20,7 @@ const scenarioIcons = [
 export default function ScenariosSection({ t }: ScenariosSectionProps) {
   return (
     <section>
-      <div className="mx-auto grid max-w-7xl gap-10 px-6 py-24">
+      <div className="mx-auto grid max-w-7xl gap-8 px-6 py-16 md:gap-10 md:py-24">
         <div className="mx-auto flex max-w-3xl flex-col items-center gap-4 text-center">
           <h2 className="text-4xl font-semibold tracking-tight text-balance">
             {t.scenarios.title}
@@ -49,4 +49,3 @@ export default function ScenariosSection({ t }: ScenariosSectionProps) {
     </section>
   )
 }
-

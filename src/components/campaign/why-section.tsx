@@ -6,7 +6,7 @@ interface WhySectionProps {
 
 export default function WhySection({ t }: WhySectionProps) {
   return (
-    <section id="why" className="mx-auto grid max-w-7xl gap-12 px-6 py-24 md:grid-cols-[0.8fr_1.2fr] md:items-start">
+    <section id="why" className="mx-auto grid max-w-7xl gap-8 px-6 py-16 md:grid-cols-[0.8fr_1.2fr] md:items-start md:gap-12 md:py-24">
       <div className="flex flex-col items-center gap-4 text-center md:items-start md:text-left">
         <h2 className="text-4xl font-semibold tracking-tight text-balance">
           {t.questions.title}
@@ -17,7 +17,7 @@ export default function WhySection({ t }: WhySectionProps) {
       </div>
       <div className="grid gap-0">
         {t.questions.items.map((item) => (
-          <div key={item.question} className="grid gap-2 border-b py-6 last:border-b-0">
+          <div key={item.question} className="grid gap-2 border-b py-5 last:border-b-0 md:py-6">
             <h3 className="m-0 text-lg font-semibold">{item.question}</h3>
             <p className="m-0 text-sm leading-6 text-muted-foreground">
               {item.answer}

@@ -161,7 +161,7 @@ export default function EmailActionSection({ t }: EmailActionSectionProps) {
 
   return (
     <section id="targets">
-      <div className="mx-auto grid max-w-6xl gap-8 px-6 py-28">
+      <div className="mx-auto grid max-w-6xl gap-6 px-6 py-20 md:gap-8 md:py-28">
         <div className="mx-auto flex max-w-3xl flex-col items-center gap-4 text-center">
           <h2 className="text-4xl font-semibold tracking-tight text-balance">
             {t.targets.title}

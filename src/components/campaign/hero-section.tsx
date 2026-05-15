@@ -12,10 +12,10 @@ export default function HeroSection({ t }: HeroSectionProps) {
   return (
     <section
       id="main-content"
-      className="mx-auto flex min-h-[calc(100svh-5rem)] max-w-6xl flex-col items-center justify-center px-6 py-24 text-center md:py-32"
+      className="mx-auto flex min-h-[calc(100svh-5rem)] max-w-6xl flex-col items-center justify-center px-6 py-16 text-center md:py-32"
     >
-      <div className="flex flex-col items-center gap-10">
-        <div className="flex flex-col items-center gap-6">
+      <div className="flex flex-col items-center gap-8 md:gap-10">
+        <div className="flex flex-col items-center gap-5 md:gap-6">
           <img
             src="/logo-eu-proposal-288.webp"
             alt={t.nav.brand}

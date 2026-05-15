@@ -12,7 +12,7 @@ const issueIcons = [LandmarkIcon, ScaleIcon, ShieldAlertIcon] as const
 
 export default function IssueSection({ t }: IssueSectionProps) {
   return (
-    <section id="issue" className="mx-auto grid max-w-4xl gap-8 px-6 py-20">
+    <section id="issue" className="mx-auto grid max-w-4xl gap-6 px-6 py-16 md:gap-8 md:py-20">
       <h2 className="text-center text-4xl font-semibold tracking-tight text-balance">
         {t.issue.title}
       </h2>
@@ -25,7 +25,7 @@ export default function IssueSection({ t }: IssueSectionProps) {
 
           return (
             <div
-              className="grid gap-3 border-b py-6 last:border-b-0 sm:grid-cols-[auto_1fr] sm:gap-5"
+              className="grid gap-3 border-b py-5 last:border-b-0 sm:grid-cols-[auto_1fr] sm:gap-5 md:py-6"
               key={item.label}
             >
               <div className="flex size-10 items-center justify-center rounded-full bg-muted text-muted-foreground">
