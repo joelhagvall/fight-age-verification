@@ -99,6 +99,29 @@ export default function EmailActionSection({ t }: EmailActionSectionProps) {
     )
   }
 
+  function setTargetChecked(email: string, checked: boolean) {
+    setIsPreviewing(false)
+    setSelectionMessage(EMPTY_SELECTION_MESSAGE)
+    setSelectedEmails((current) => {
+      if (checked) {
+        return current.includes(email) ? current : [...current, email]
+      }
+
+      return current.filter((selected) => selected !== email)
+    })
+  }
+
+  function handleTargetCardClick(event: React.MouseEvent, email: string) {
+    if (
+      event.target instanceof Element &&
+      event.target.closest('[data-slot="checkbox"]')
+    ) {
+      return
+    }
+
+    toggleTarget(email)
+  }
+
   function scrollToPreviewCard() {
     requestAnimationFrame(() => {
       previewCardRef.current?.scrollIntoView({
@@ -186,7 +209,9 @@ export default function EmailActionSection({ t }: EmailActionSectionProps) {
                     return (
                       <div
                         key={target.email}
-                        onClick={() => { toggleTarget(target.email); }}
+                        onClick={(event) => {
+                          handleTargetCardClick(event, target.email)
+                        }}
                         className={cn(
                           'grid cursor-pointer gap-3 rounded-lg border p-4 transition sm:grid-cols-[auto_1fr]',
                           checked
@@ -196,9 +221,10 @@ export default function EmailActionSection({ t }: EmailActionSectionProps) {
                       >
                         <Checkbox
                           checked={checked}
-                          onCheckedChange={() => { toggleTarget(target.email); }}
+                          onCheckedChange={(nextChecked) => {
+                            setTargetChecked(target.email, nextChecked)
+                          }}
                           aria-label={target.name}
-                          onClick={(event) => { event.stopPropagation(); }}
                           className="mt-1 size-6"
                         />
                         <span className="grid gap-1">

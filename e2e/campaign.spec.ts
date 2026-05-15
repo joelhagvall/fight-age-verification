@@ -74,6 +74,23 @@ test('navbar does not mutate the URL', async ({ page }) => {
   await expect(page).toHaveURL(/\/$/)
 })
 
+test('recipient checkboxes and cards toggle selection', async ({ page }) => {
+  await page.addInitScript(() => {
+    window.localStorage.clear()
+  })
+  await page.goto('http://localhost:3000/')
+  await waitForHydration(page)
+
+  const checkbox = page.getByRole('checkbox', { name: 'Ursula von der Leyen' })
+  await expect(checkbox).toBeChecked()
+
+  await checkbox.click()
+  await expect(checkbox).not.toBeChecked()
+
+  await page.getByText('Ursula von der Leyen', { exact: true }).click()
+  await expect(checkbox).toBeChecked()
+})
+
 test('footer pages can navigate back into the campaign flow', async ({ page }) => {
   await page.goto('/about?lang=sv')
   await waitForHydration(page)
