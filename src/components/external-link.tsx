@@ -16,10 +16,13 @@ export default function ExternalLink({
       {...props}
       target="_blank"
       rel="noreferrer"
-      className={cn('inline-flex w-fit items-center gap-1.5', className)}
+      className={cn('inline w-fit', className)}
     >
       {children}
-      <ExternalLinkIcon className="size-3.5 shrink-0 opacity-60" aria-hidden="true" />
+      <ExternalLinkIcon
+        className="ml-1 inline size-3.5 align-[-0.125em] opacity-60"
+        aria-hidden="true"
+      />
     </a>
   )
 }

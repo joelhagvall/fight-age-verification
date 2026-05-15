@@ -149,7 +149,7 @@ export default function Header({ t, locale, onToggleLocale }: HeaderProps) {
   }
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b bg-background/95 backdrop-blur">
+    <header className="fixed inset-x-0 top-0 z-50 border-b bg-background">
       <nav className="relative mx-auto flex max-w-7xl items-center justify-between gap-3 px-5 py-2.5 md:justify-center md:px-6 md:py-4">
         {isHomeRoute ? (
           <button
