@@ -17,14 +17,14 @@ test.describe('campaign accessibility', () => {
     await expect(
       page.getByRole('heading', { name: 'The internet should not require ID.' })
     ).toBeVisible()
-    await expectNoAxeViolations(page, 'home en dark')
+    await expectNoAxeViolations(page, 'home en light')
 
     await page.goto('/?lang=sv')
     await expect(page.locator('html')).toHaveAttribute('lang', 'sv')
     await expect(
       page.getByRole('heading', { name: 'Internet ska inte kräva ID.' })
     ).toBeVisible()
-    await expectNoAxeViolations(page, 'home sv dark')
+    await expectNoAxeViolations(page, 'home sv light')
   })
 
   test('footer pages have no axe violations', async ({ page }) => {
@@ -69,7 +69,7 @@ async function toggleTheme(page: Page): Promise<void> {
     await expect(page.getByRole('button', { name: 'Close menu' })).toBeVisible()
   }
 
-  await page.getByRole('button', { name: 'Use light mode' }).evaluate((button) => {
+  await page.getByRole('button', { name: 'Use dark mode' }).evaluate((button) => {
     ;(button as HTMLButtonElement).click()
   })
 }

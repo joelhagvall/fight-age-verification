@@ -12,7 +12,7 @@ import { cn } from '#/lib/utils'
 
 function getInitialMode(): ThemeMode {
   if (typeof window === 'undefined') {
-    return 'dark'
+    return 'light'
   }
 
   const queryTheme = new URLSearchParams(window.location.search).get('theme')
@@ -20,7 +20,7 @@ function getInitialMode(): ThemeMode {
     return queryTheme
   }
 
-  return readThemePreference() ?? 'dark'
+  return readThemePreference() ?? 'light'
 }
 
 function applyThemeMode(mode: ThemeMode) {
@@ -35,7 +35,7 @@ interface ThemeToggleProps {
 }
 
 export default function ThemeToggle({ t }: ThemeToggleProps) {
-  const [mode, setMode] = useState<ThemeMode>('dark')
+  const [mode, setMode] = useState<ThemeMode>('light')
   const scrollPositionRef = useRef({ x: 0, y: 0 })
 
   useEffect(() => {

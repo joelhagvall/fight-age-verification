@@ -38,8 +38,8 @@ test('renders campaign page and toggles language and theme', async ({ page }) =>
     'href',
     /mailto:/
   )
-  await expect(page.locator('html')).toHaveClass(/dark/)
-  await expectThemeToggle(page, 'Use light mode')
+  await expect(page.locator('html')).not.toHaveClass(/dark/)
+  await expectThemeToggle(page, 'Use dark mode')
 
   await page.waitForTimeout(500)
   await page.getByRole('button', { name: 'SV', exact: true }).click()
@@ -50,8 +50,8 @@ test('renders campaign page and toggles language and theme', async ({ page }) =>
   ).toBeVisible()
   await expect(page.getByRole('heading', { name: 'Gör din röst hörd' })).toBeVisible()
 
-  await clickThemeToggle(page, 'Använd ljust läge')
-  await expect(page.locator('html')).not.toHaveClass(/dark/)
+  await clickThemeToggle(page, 'Använd mörkt läge')
+  await expect(page.locator('html')).toHaveClass(/dark/)
 
   await expect(page.getByText('I am writing to ask you to oppose mandatory')).toBeVisible()
 })
