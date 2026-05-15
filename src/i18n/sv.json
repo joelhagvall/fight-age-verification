@@ -438,15 +438,9 @@
         },
         {
           "title": "Byggd av",
-          "body": "Sidan är byggd fristående av Joel Hägvall. För direkt kontakt med personen bakom projektet, använd länkarna nedan.",
+          "body": "Sidan är byggd fristående av Joel Hägvall.",
           "link": "https://joelhagvall.com",
           "href": "https://joelhagvall.com"
-        },
-        {
-          "title": "LinkedIn",
-          "body": "Kontakta Joel på LinkedIn.",
-          "link": "https://www.linkedin.com/in/joel-hägvall-810601147/",
-          "href": "https://www.linkedin.com/in/joel-h%C3%A4gvall-810601147/"
         },
         {
           "title": "Källkod",

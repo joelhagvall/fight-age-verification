@@ -438,15 +438,9 @@
         },
         {
           "title": "Built by",
-          "body": "The site is built independently by Joel Hägvall. For direct contact with the person behind the project, use the links below.",
+          "body": "The site is built independently by Joel Hägvall.",
           "link": "https://joelhagvall.com",
           "href": "https://joelhagvall.com"
-        },
-        {
-          "title": "LinkedIn",
-          "body": "Connect with Joel on LinkedIn.",
-          "link": "https://www.linkedin.com/in/joel-hägvall-810601147/",
-          "href": "https://www.linkedin.com/in/joel-h%C3%A4gvall-810601147/"
         },
         {
           "title": "Source code",
