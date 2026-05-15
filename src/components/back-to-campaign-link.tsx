@@ -1,7 +1,6 @@
 import { Link } from '@tanstack/react-router'
 import ArrowLeftIcon from 'lucide-react/dist/esm/icons/arrow-left.mjs'
-
-const RESTORE_HOME_SCROLL_KEY = 'fight-age-verification:restore-home-scroll'
+import { writeRestoreHomeScrollPreference } from '#/lib/preferences'
 
 interface BackToCampaignLinkProps {
   label: string
@@ -9,7 +8,7 @@ interface BackToCampaignLinkProps {
 
 export default function BackToCampaignLink({ label }: BackToCampaignLinkProps) {
   function handleBack() {
-    sessionStorage.setItem(RESTORE_HOME_SCROLL_KEY, 'true')
+    writeRestoreHomeScrollPreference()
   }
 
   return (

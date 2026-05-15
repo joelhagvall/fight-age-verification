@@ -1,4 +1,4 @@
-import { startTransition, useEffect, useRef, useState } from 'react'
+import { startTransition, useEffect, useMemo, useRef, useState } from 'react'
 import ArrowRightIcon from 'lucide-react/dist/esm/icons/arrow-right.mjs'
 import CopyIcon from 'lucide-react/dist/esm/icons/copy.mjs'
 import MailIcon from 'lucide-react/dist/esm/icons/mail.mjs'
@@ -33,7 +33,7 @@ const SWEDEN_GROUP_INDEX = 1
 
 export default function EmailActionSection({ t }: EmailActionSectionProps) {
   const previewCardRef = useRef<HTMLDivElement>(null)
-  const targets = flattenTargets(t)
+  const targets = useMemo(() => flattenTargets(t), [t])
   const [selectedEmails, setSelectedEmails] = useState(() =>
     defaultSelectedEmails(targets)
   )
@@ -43,21 +43,28 @@ export default function EmailActionSection({ t }: EmailActionSectionProps) {
   const [selectedGroup, setSelectedGroup] = useState('0')
   const [selectedTemplate, setSelectedTemplate] = useState<'short' | 'long'>('short')
 
-  const selectedEmailSet = new Set(selectedEmails)
-  const selectedTargets = targets.filter((target) =>
-    selectedEmailSet.has(target.email)
+  const selectedEmailSet = useMemo(() => new Set(selectedEmails), [selectedEmails])
+  const selectedTargets = useMemo(
+    () => targets.filter((target) => selectedEmailSet.has(target.email)),
+    [selectedEmailSet, targets]
   )
-  const targetGroups = [
-    { label: t.targets.allCountries, value: 'all' },
-    ...t.targets.groups.map((group, index) => ({
-      label: group.title,
-      value: String(index),
-    })),
-  ]
-  const visibleTargets =
-    selectedGroup === 'all'
-      ? targets
-      : targets.filter((target) => String(target.groupIndex) === selectedGroup)
+  const targetGroups = useMemo(
+    () => [
+      { label: t.targets.allCountries, value: 'all' },
+      ...t.targets.groups.map((group, index) => ({
+        label: group.title,
+        value: String(index),
+      })),
+    ],
+    [t]
+  )
+  const visibleTargets = useMemo(
+    () =>
+      selectedGroup === 'all'
+        ? targets
+        : targets.filter((target) => String(target.groupIndex) === selectedGroup),
+    [selectedGroup, targets]
+  )
   const usesEnglishMailCopy = selectedTargets.some(
     (target) => target.groupIndex !== SWEDEN_GROUP_INDEX
   )
@@ -67,7 +74,10 @@ export default function EmailActionSection({ t }: EmailActionSectionProps) {
   const activeTargetCopy = usesEnglishMailCopy ? dictionaries.en.targets : t.targets
   const mailBodyTemplate =
     selectedTemplate === 'short' ? activeTargetCopy.shortBody : activeTargetCopy.body
-  const visibleRecipientNames = selectedTargets.slice(0, 4)
+  const visibleRecipientNames = useMemo(
+    () => selectedTargets.slice(0, 4),
+    [selectedTargets]
+  )
   const hiddenRecipientCount = Math.max(
     selectedTargets.length - visibleRecipientNames.length,
     0
@@ -83,13 +93,7 @@ export default function EmailActionSection({ t }: EmailActionSectionProps) {
     setSelectedGroup(groupValue)
     setIsPreviewing(false)
     setSelectionMessage(EMPTY_SELECTION_MESSAGE)
-    setSelectedEmails(
-      groupValue === 'all'
-        ? targets.map((target) => target.email)
-        : targets
-            .filter((target) => String(target.groupIndex) === groupValue)
-            .map((target) => target.email)
-    )
+    setSelectedEmails(emailsForGroup(targets, groupValue))
   }
 
   function toggleTarget(email: string) {
@@ -216,7 +220,7 @@ export default function EmailActionSection({ t }: EmailActionSectionProps) {
                           handleTargetCardClick(event, target.email)
                         }}
                         className={cn(
-                          'grid cursor-pointer gap-3 rounded-lg border p-4 sm:grid-cols-[auto_1fr]',
+                          'grid cursor-pointer gap-3 rounded-lg border p-4 [contain-intrinsic-size:auto_7rem] [content-visibility:auto] sm:grid-cols-[auto_1fr]',
                           checked
                             ? 'border-primary bg-background'
                             : 'bg-background/70 hover:bg-background'
@@ -429,7 +433,28 @@ export default function EmailActionSection({ t }: EmailActionSectionProps) {
 }
 
 function defaultSelectedEmails(targets: ReturnType<typeof flattenTargets>) {
-  return targets
-    .filter((target) => target.groupIndex < DEFAULT_SELECTED_GROUP_COUNT)
-    .map((target) => target.email)
+  const emails: string[] = []
+
+  for (const target of targets) {
+    if (target.groupIndex < DEFAULT_SELECTED_GROUP_COUNT) {
+      emails.push(target.email)
+    }
+  }
+
+  return emails
+}
+
+function emailsForGroup(
+  targets: ReturnType<typeof flattenTargets>,
+  groupValue: string
+) {
+  const emails: string[] = []
+
+  for (const target of targets) {
+    if (groupValue === 'all' || String(target.groupIndex) === groupValue) {
+      emails.push(target.email)
+    }
+  }
+
+  return emails
 }

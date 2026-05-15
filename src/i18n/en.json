@@ -165,7 +165,7 @@
     "selectedCount": "selected",
     "continue": "Review email",
     "back": "Back",
-    "button": "Open email",
+    "button": "Open mail app",
     "customiseStep": "Customise",
     "sendStep": "Send",
     "customiseTitle": "Customise your message",
@@ -415,7 +415,7 @@
         },
         {
           "title": "Email function",
-          "body": "When you click Open email, your own mail app is used. The recipients, subject, and text are passed through a mailto link so you can review and edit the message before sending."
+          "body": "When you click Open mail app, your own mail app is used. The recipients, subject, and text are passed through a mailto link so you can review and edit the message before sending."
         },
         {
           "title": "Vercel Analytics",

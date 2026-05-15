@@ -1,13 +1,17 @@
 import { createFileRoute } from '@tanstack/react-router'
+import { useRef } from 'react'
 import CampaignPage from '#/components/campaign-page'
 import Footer from '#/components/footer'
 import Header from '#/components/header'
 import { parseLocaleSearch } from '#/lib/locale'
+import {
+  clearRestoreHomeScrollPreference,
+  readHomeScrollPosition,
+  readRestoreHomeScrollPreference,
+  writeHomeScrollPosition,
+} from '#/lib/preferences'
 import { useIsomorphicLayoutEffect } from '#/lib/use-isomorphic-layout-effect'
 import { useLocale } from '#/lib/use-locale'
-
-const HOME_SCROLL_KEY = 'fight-age-verification:home-scroll-y'
-const RESTORE_HOME_SCROLL_KEY = 'fight-age-verification:restore-home-scroll'
 
 export const Route = createFileRoute('/')({
   validateSearch: parseLocaleSearch,
@@ -17,6 +21,7 @@ export const Route = createFileRoute('/')({
 function App() {
   const { lang } = Route.useSearch()
   const { locale, t, toggleLocale } = useLocale(lang, true)
+  const scrollSaveFrameRef = useRef<number | null>(null)
 
   useIsomorphicLayoutEffect(() => {
     const sectionId = new URLSearchParams(window.location.search).get('section')
@@ -26,10 +31,10 @@ function App() {
   }, [])
 
   useIsomorphicLayoutEffect(() => {
-    if (sessionStorage.getItem(RESTORE_HOME_SCROLL_KEY) === 'true') {
-      sessionStorage.removeItem(RESTORE_HOME_SCROLL_KEY)
-      const savedScrollY = Number(sessionStorage.getItem(HOME_SCROLL_KEY))
-      if (Number.isFinite(savedScrollY)) {
+    if (readRestoreHomeScrollPreference()) {
+      clearRestoreHomeScrollPreference()
+      const savedScrollY = readHomeScrollPosition()
+      if (savedScrollY !== null) {
         restoreScrollPosition(savedScrollY)
       }
     }
@@ -37,7 +42,18 @@ function App() {
 
   useIsomorphicLayoutEffect(() => {
     function saveScrollPosition() {
-      sessionStorage.setItem(HOME_SCROLL_KEY, String(window.scrollY))
+      writeHomeScrollPosition(window.scrollY)
+    }
+
+    function scheduleScrollPositionSave() {
+      if (scrollSaveFrameRef.current !== null) {
+        return
+      }
+
+      scrollSaveFrameRef.current = requestAnimationFrame(() => {
+        scrollSaveFrameRef.current = null
+        saveScrollPosition()
+      })
     }
 
     function saveBeforeLeavingHome(event: MouseEvent) {
@@ -50,12 +66,16 @@ function App() {
 
     saveScrollPosition()
     document.addEventListener('click', saveBeforeLeavingHome, { capture: true })
-    window.addEventListener('scroll', saveScrollPosition, { passive: true })
+    window.addEventListener('scroll', scheduleScrollPositionSave, { passive: true })
 
     return () => {
+      if (scrollSaveFrameRef.current !== null) {
+        cancelAnimationFrame(scrollSaveFrameRef.current)
+        scrollSaveFrameRef.current = null
+      }
       saveScrollPosition()
       document.removeEventListener('click', saveBeforeLeavingHome, { capture: true })
-      window.removeEventListener('scroll', saveScrollPosition)
+      window.removeEventListener('scroll', scheduleScrollPositionSave)
     }
   }, [])
 

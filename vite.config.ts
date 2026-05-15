@@ -16,7 +16,7 @@ const config = defineConfig({
     tanstackStart({
       router: {
         codeSplittingOptions: {
-          defaultBehavior: [],
+          defaultBehavior: [['component']],
         },
       },
     }),

@@ -165,7 +165,7 @@
     "selectedCount": "valda",
     "continue": "Granska mailet",
     "back": "Tillbaka",
-    "button": "Öppna mail",
+    "button": "Öppna mailapp",
     "customiseStep": "Anpassa",
     "sendStep": "Skicka",
     "customiseTitle": "Anpassa ditt meddelande",
@@ -415,7 +415,7 @@
         },
         {
           "title": "Mailfunktionen",
-          "body": "När du klickar på Öppna mail används din egen mailapp. Mottagare, ämne och text skickas vidare via en mailto-länk så att du kan granska och ändra meddelandet innan du skickar."
+          "body": "När du klickar på Öppna mailapp används din egen mailapp. Mottagare, ämne och text skickas vidare via en mailto-länk så att du kan granska och ändra meddelandet innan du skickar."
         },
         {
           "title": "Vercel Analytics",
