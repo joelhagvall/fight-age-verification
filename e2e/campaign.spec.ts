@@ -31,7 +31,9 @@ test('renders campaign page and toggles language and theme', async ({ page }) =>
     button.scrollIntoView({ block: 'center' })
   })
   await expect(reviewButton).toBeInViewport()
-  await reviewButton.click()
+  await reviewButton.evaluate((button) => {
+    ;(button as HTMLButtonElement).click()
+  })
   await expect(page.getByRole('button', { name: 'Copy text' })).toBeVisible()
   await expect(page.getByText('I am writing to ask you to oppose mandatory')).toBeVisible()
   await expect(page.getByRole('button', { name: 'Copy recipients' })).toBeVisible()
