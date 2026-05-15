@@ -148,10 +148,10 @@ jobs:
             ${{ runner.os }}-playwright-
 
       - name: Install Playwright browsers
-        run: bun x playwright install --with-deps chromium webkit
+        run: bun x playwright install --with-deps chromium
 
       - name: Run accessibility suite
-        run: bun run test:a11y -- --reporter=list,junit,html
+        run: bun run test:a11y -- --project=desktop-chrome --reporter=list,junit,html
         env:
           CI: 'true'
           PLAYWRIGHT_JUNIT_OUTPUT_FILE: 'test-results/junit-a11y.xml'
@@ -193,10 +193,10 @@ jobs:
             ${{ runner.os }}-playwright-
 
       - name: Install Playwright browsers
-        run: bun x playwright install --with-deps chromium webkit
+        run: bun x playwright install --with-deps chromium
 
       - name: Run E2E suite
-        run: bun run test:e2e -- e2e/campaign.spec.ts --reporter=list,junit,html
+        run: bun run test:e2e -- e2e/campaign.spec.ts --project=desktop-chrome --project=mobile-chrome --reporter=list,junit,html
         env:
           CI: 'true'
           PLAYWRIGHT_JUNIT_OUTPUT_FILE: 'test-results/junit-e2e.xml'
