@@ -8,17 +8,14 @@ interface BackToCampaignLinkProps {
 }
 
 export default function BackToCampaignLink({ label }: BackToCampaignLinkProps) {
-  function handleBack(event: React.MouseEvent<HTMLAnchorElement>) {
-    if (window.history.length > 1) {
-      event.preventDefault()
-      sessionStorage.setItem(RESTORE_HOME_SCROLL_KEY, 'true')
-      window.history.back()
-    }
+  function handleBack() {
+    sessionStorage.setItem(RESTORE_HOME_SCROLL_KEY, 'true')
   }
 
   return (
     <Link
       to="/"
+      resetScroll={false}
       onClick={handleBack}
       className="nav-link mb-16 flex w-fit items-center gap-2 text-sm font-medium"
     >

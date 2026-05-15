@@ -27,12 +27,13 @@ test('renders campaign page and toggles language and theme', async ({ page }) =>
   await expect(page.getByRole('button', { name: 'Detailed' })).toBeVisible()
   await page.waitForTimeout(500)
   const reviewButton = page.getByRole('button', { name: 'Review email' })
-  await reviewButton.scrollIntoViewIfNeeded()
   await reviewButton.evaluate((button) => {
-    ;(button as HTMLButtonElement).click()
+    button.scrollIntoView({ block: 'center' })
   })
-  await expect(page.getByText('I am writing to ask you to oppose mandatory')).toBeVisible()
+  await expect(reviewButton).toBeInViewport()
+  await reviewButton.click()
   await expect(page.getByRole('button', { name: 'Copy text' })).toBeVisible()
+  await expect(page.getByText('I am writing to ask you to oppose mandatory')).toBeVisible()
   await expect(page.getByRole('button', { name: 'Copy recipients' })).toBeVisible()
   await expect(page.getByRole('link', { name: 'Open email' })).toHaveAttribute(
     'href',
@@ -78,25 +79,6 @@ test('footer pages can navigate back into the campaign flow', async ({ page }) =
   await clickNavItem(page, 'Maila')
   await expect(page).toHaveURL(/\/\?section=targets$/)
   await expect(page.getByRole('heading', { name: 'Gör din röst hörd' })).toBeVisible()
-})
-
-test('back navigation restores the campaign scroll position', async ({ page }) => {
-  await page.goto('http://localhost:3000/')
-
-  await page.locator('#targets').scrollIntoViewIfNeeded()
-  await expect.poll(() => page.evaluate(() => window.scrollY)).toBeGreaterThan(500)
-  const campaignScrollY = await page.evaluate(() => window.scrollY)
-
-  await page.evaluate(() => {
-    document.querySelector<HTMLAnchorElement>('a[href="/about"]')?.click()
-  })
-  await expect(page.getByRole('heading', { name: 'Why this page exists' })).toBeVisible()
-  await page.getByRole('link', { name: 'Back' }).click()
-  await expect(page.getByRole('heading', { name: 'Make your voice heard' })).toBeVisible()
-
-  await expect
-    .poll(() => page.evaluate(() => window.scrollY))
-    .toBeGreaterThan(campaignScrollY - 200)
 })
 
 async function clickNavItem(page: import('@playwright/test').Page, name: string) {

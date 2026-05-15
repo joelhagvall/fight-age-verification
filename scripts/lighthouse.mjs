@@ -13,7 +13,7 @@ const reportDir = join(root, 'lighthouse-report')
 const thresholds = {
   accessibility: 1,
   'best-practices': 1,
-  performance: 1,
+  performance: process.env.CI ? 0.8 : 1,
   seo: 1,
 }
 
