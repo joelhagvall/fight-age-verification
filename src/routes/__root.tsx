@@ -1,5 +1,6 @@
 import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
 import { Analytics } from '@vercel/analytics/react'
+import { useEffect } from 'react'
 import { dictionaries, defaultLocale } from '#/i18n'
 
 import appCss from '../styles.css?url'
@@ -159,11 +160,20 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         {children}
+        <HydrationMarker />
         <VercelAnalytics />
         <Scripts />
       </body>
     </html>
   )
+}
+
+function HydrationMarker() {
+  useEffect(() => {
+    document.documentElement.dataset['hydrated'] = 'true'
+  }, [])
+
+  return null
 }
 
 function VercelAnalytics() {

@@ -5,6 +5,7 @@ test('renders campaign page and toggles language and theme', async ({ page }) =>
     window.localStorage.clear()
   })
   await page.goto('http://localhost:3000/')
+  await waitForHydration(page)
 
   await expect(
     page.getByRole('heading', {
@@ -31,9 +32,7 @@ test('renders campaign page and toggles language and theme', async ({ page }) =>
     button.scrollIntoView({ block: 'center' })
   })
   await expect(reviewButton).toBeInViewport()
-  await reviewButton.evaluate((button) => {
-    ;(button as HTMLButtonElement).click()
-  })
+  await reviewButton.click()
   await expect(page.getByRole('button', { name: 'Copy text' })).toBeVisible()
   await expect(page.getByText('I am writing to ask you to oppose mandatory')).toBeVisible()
   await expect(page.getByRole('button', { name: 'Copy recipients' })).toBeVisible()
@@ -67,6 +66,7 @@ test('navbar does not mutate the URL', async ({ page }) => {
     window.localStorage.clear()
   })
   await page.goto('http://localhost:3000/')
+  await waitForHydration(page)
 
   await expect(page).toHaveURL(/\/$/)
   await clickNavItem(page, 'Email')
@@ -76,12 +76,19 @@ test('navbar does not mutate the URL', async ({ page }) => {
 
 test('footer pages can navigate back into the campaign flow', async ({ page }) => {
   await page.goto('/about?lang=sv')
+  await waitForHydration(page)
 
   await expect(page.getByRole('heading', { name: 'Varför sidan finns' })).toBeVisible()
   await clickNavItem(page, 'Maila')
   await expect(page).toHaveURL(/\/\?section=targets$/)
   await expect(page.getByRole('heading', { name: 'Gör din röst hörd' })).toBeVisible()
 })
+
+async function waitForHydration(page: import('@playwright/test').Page) {
+  await expect(page.locator('html')).toHaveAttribute('data-hydrated', 'true', {
+    timeout: 10_000,
+  })
+}
 
 async function clickNavItem(page: import('@playwright/test').Page, name: string) {
   const viewport = page.viewportSize()
