@@ -2,6 +2,7 @@
 
 Campaign site against mandatory online age verification.
 
+Live site: [https://fightageverification.com](https://fightageverification.com)
 
 ## The Problem
 
