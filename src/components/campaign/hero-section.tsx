@@ -14,7 +14,7 @@ export default function HeroSection({ t }: HeroSectionProps) {
       id="main-content"
       className="mx-auto flex min-h-[calc(100svh-5rem)] max-w-6xl flex-col items-center justify-center px-6 py-24 text-center md:py-32"
     >
-      <div className="calm-reveal flex flex-col items-center gap-10">
+      <div className="flex flex-col items-center gap-10">
         <div className="flex flex-col items-center gap-6">
           <img
             src="/logo-eu-proposal-288.webp"
@@ -53,4 +53,3 @@ export default function HeroSection({ t }: HeroSectionProps) {
     </section>
   )
 }
-

@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import "tw-animate-css";
 @import "shadcn/tailwind.css";
 @import "@fontsource-variable/geist";
 
@@ -159,7 +158,6 @@
     color: var(--muted-foreground);
     font-weight: 500;
     text-decoration: none;
-    transition: color 160ms ease;
   }
   .nav-link:hover {
     color: var(--foreground);
@@ -168,46 +166,6 @@
     color: var(--foreground);
   }
   .skip-link {
-    @apply fixed left-4 top-4 z-50 -translate-y-24 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-sm transition-transform focus-visible:translate-y-0;
-  }
-  .calm-reveal {
-    animation: calm-reveal 320ms ease-out both;
-  }
-  .calm-reveal-delayed {
-    animation: calm-reveal 360ms ease-out 90ms both;
-  }
-  .calm-reveal-stagger {
-    animation: calm-reveal 320ms ease-out both;
-  }
-  .calm-reveal-stagger:nth-child(2) {
-    animation-delay: 60ms;
-  }
-  .calm-reveal-stagger:nth-child(3) {
-    animation-delay: 120ms;
-  }
-  .calm-reveal-stagger:nth-child(4) {
-    animation-delay: 180ms;
-  }
-  @keyframes calm-reveal {
-    from {
-      transform: translateY(8px);
-    }
-    to {
-      transform: translateY(0);
-    }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    *,
-    ::before,
-    ::after {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
-    }
-    .calm-reveal,
-    .calm-reveal-delayed,
-    .calm-reveal-stagger {
-      animation: none !important;
-    }
+    @apply fixed left-4 top-4 z-50 -translate-y-24 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-sm focus-visible:translate-y-0;
   }
 }

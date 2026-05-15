@@ -125,7 +125,6 @@ export default function EmailActionSection({ t }: EmailActionSectionProps) {
   function scrollToPreviewCard() {
     requestAnimationFrame(() => {
       previewCardRef.current?.scrollIntoView({
-        behavior: 'smooth',
         block: 'start',
       })
     })
@@ -213,7 +212,7 @@ export default function EmailActionSection({ t }: EmailActionSectionProps) {
                           handleTargetCardClick(event, target.email)
                         }}
                         className={cn(
-                          'grid cursor-pointer gap-3 rounded-lg border p-4 transition sm:grid-cols-[auto_1fr]',
+                          'grid cursor-pointer gap-3 rounded-lg border p-4 sm:grid-cols-[auto_1fr]',
                           checked
                             ? 'border-primary bg-background'
                             : 'bg-background/70 hover:bg-background'
@@ -357,7 +356,7 @@ export default function EmailActionSection({ t }: EmailActionSectionProps) {
                         type="button"
                         onClick={() => { setSelectedTemplate('short'); }}
                         className={cn(
-                          'rounded-md px-3 py-2 text-sm font-medium transition',
+                          'rounded-md px-3 py-2 text-sm font-medium',
                           selectedTemplate === 'short'
                             ? 'bg-primary text-primary-foreground'
                             : 'text-muted-foreground hover:text-foreground'
@@ -369,7 +368,7 @@ export default function EmailActionSection({ t }: EmailActionSectionProps) {
                         type="button"
                         onClick={() => { setSelectedTemplate('long'); }}
                         className={cn(
-                          'rounded-md px-3 py-2 text-sm font-medium transition',
+                          'rounded-md px-3 py-2 text-sm font-medium',
                           selectedTemplate === 'long'
                             ? 'bg-primary text-primary-foreground'
                             : 'text-muted-foreground hover:text-foreground'

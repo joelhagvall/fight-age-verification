@@ -83,7 +83,7 @@ export default function Header({ t, locale, onToggleLocale }: HeaderProps) {
 
     const headerOffset = 72
     const top = section.getBoundingClientRect().top + window.scrollY - headerOffset
-    window.scrollTo({ top: Math.max(top, 0), behavior: 'smooth' })
+    window.scrollTo({ top: Math.max(top, 0) })
     setActiveSection(sectionId)
     setIsMenuOpen(false)
   }

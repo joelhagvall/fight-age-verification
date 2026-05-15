@@ -14,7 +14,7 @@ function SelectTrigger({ className, children, ...props }: SelectPrimitive.Trigge
   return (
     <SelectPrimitive.Trigger
       className={cn(
-        "flex h-11 w-full items-center justify-between gap-2 rounded-lg border bg-background px-3 text-sm text-foreground shadow-sm outline-none transition-[background-color,border-color,box-shadow] hover:bg-muted focus-visible:ring-3 focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 data-popup-open:bg-muted [&_svg]:size-4 [&_svg]:shrink-0",
+        "flex h-11 w-full items-center justify-between gap-2 rounded-lg border bg-background px-3 text-sm text-foreground shadow-sm outline-none hover:bg-muted focus-visible:ring-3 focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 data-popup-open:bg-muted [&_svg]:size-4 [&_svg]:shrink-0",
         className
       )}
       {...props}

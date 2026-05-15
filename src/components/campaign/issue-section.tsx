@@ -25,7 +25,7 @@ export default function IssueSection({ t }: IssueSectionProps) {
 
           return (
             <div
-              className="calm-reveal-stagger grid gap-3 border-b py-6 last:border-b-0 sm:grid-cols-[auto_1fr] sm:gap-5"
+              className="grid gap-3 border-b py-6 last:border-b-0 sm:grid-cols-[auto_1fr] sm:gap-5"
               key={item.label}
             >
               <div className="flex size-10 items-center justify-center rounded-full bg-muted text-muted-foreground">
