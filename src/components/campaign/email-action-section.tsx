@@ -29,6 +29,7 @@ interface EmailActionSectionProps {
 
 const EMPTY_SELECTION_MESSAGE = ''
 const DEFAULT_SELECTED_GROUP_COUNT = 1
+const SWEDEN_GROUP_INDEX = 1
 
 export default function EmailActionSection({ t }: EmailActionSectionProps) {
   const previewCardRef = useRef<HTMLDivElement>(null)
@@ -36,7 +37,7 @@ export default function EmailActionSection({ t }: EmailActionSectionProps) {
   const [selectedEmails, setSelectedEmails] = useState(() =>
     defaultSelectedEmails(targets)
   )
-  const [customBody, setCustomBody] = useState(t.targets.body)
+  const [customBody, setCustomBody] = useState(dictionaries.en.targets.shortBody)
   const [isPreviewing, setIsPreviewing] = useState(false)
   const [selectionMessage, setSelectionMessage] = useState(EMPTY_SELECTION_MESSAGE)
   const [selectedGroup, setSelectedGroup] = useState('0')
@@ -57,7 +58,9 @@ export default function EmailActionSection({ t }: EmailActionSectionProps) {
     selectedGroup === 'all'
       ? targets
       : targets.filter((target) => String(target.groupIndex) === selectedGroup)
-  const usesEnglishMailCopy = selectedTargets.some((target) => target.groupIndex !== 0)
+  const usesEnglishMailCopy = selectedTargets.some(
+    (target) => target.groupIndex !== SWEDEN_GROUP_INDEX
+  )
   const mailSubject = usesEnglishMailCopy
     ? dictionaries.en.targets.subject
     : t.targets.subject
@@ -142,6 +145,7 @@ export default function EmailActionSection({ t }: EmailActionSectionProps) {
   }
 
   function hidePreview() {
+    setSelectionMessage(EMPTY_SELECTION_MESSAGE)
     setIsPreviewing(false)
     scrollToPreviewCard()
   }

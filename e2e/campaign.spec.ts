@@ -1,8 +1,12 @@
 import { expect, test } from '@playwright/test'
 
 test('renders campaign page and toggles language and theme', async ({ page }) => {
+  await page.context().grantPermissions(['clipboard-write'], {
+    origin: 'http://localhost:3000',
+  })
   await page.addInitScript(() => {
     window.localStorage.clear()
+    window.localStorage.setItem('fight-age-verification:locale:v1', 'en')
   })
   await page.goto('http://localhost:3000/')
   await waitForHydration(page)
@@ -40,8 +44,11 @@ test('renders campaign page and toggles language and theme', async ({ page }) =>
     'href',
     /mailto:/
   )
+  await page.getByRole('button', { name: 'Copy text' }).click()
+  await expect(page.getByText('Copied.')).toBeVisible()
   await page.getByRole('button', { name: 'Back' }).click()
   await expect(page.getByRole('button', { name: 'Review email' })).toBeVisible()
+  await expect(page.getByText('Copied.')).not.toBeVisible()
   await expect(page.locator('html')).not.toHaveClass(/dark/)
   await expectThemeToggle(page, 'Use dark mode')
 
@@ -58,7 +65,9 @@ test('renders campaign page and toggles language and theme', async ({ page }) =>
   await clickThemeToggle(page, 'Använd mörkt läge')
   await expect(page.locator('html')).toHaveClass(/dark/)
 
-  await expect(page.getByText('Jag skriver till dig för att be dig motsätta dig')).toBeVisible()
+  await expect(
+    page.getByText('I am writing to ask you to oppose mandatory')
+  ).toBeVisible()
 })
 
 test('navbar does not mutate the URL', async ({ page }) => {
@@ -89,6 +98,27 @@ test('recipient checkboxes and cards toggle selection', async ({ page }) => {
 
   await page.getByText('Ursula von der Leyen', { exact: true }).click()
   await expect(checkbox).toBeChecked()
+})
+
+test('uses English email copy for EU recipients when the page is Swedish', async ({
+  page,
+}) => {
+  await page.addInitScript(() => {
+    window.localStorage.clear()
+  })
+  await page.goto('http://localhost:3000/')
+  await waitForHydration(page)
+
+  await page.getByRole('button', { name: 'SV', exact: true }).click()
+  await expect(
+    page.getByRole('heading', { name: 'Gör din röst hörd' })
+  ).toBeVisible()
+
+  await page.getByRole('button', { name: 'Granska mailet' }).click()
+  await expect(
+    page.getByText('I am writing to ask you to oppose mandatory')
+  ).toBeVisible()
+  await expect(page.getByText('Jag skriver till dig')).not.toBeVisible()
 })
 
 test('footer pages can navigate back into the campaign flow', async ({ page }) => {
