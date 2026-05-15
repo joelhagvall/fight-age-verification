@@ -4,11 +4,12 @@ import { dictionaries, defaultLocale } from '#/i18n'
 
 import appCss from '../styles.css?url'
 
-const THEME_INIT_SCRIPT = `(function(){try{var params=new URLSearchParams(window.location.search);var query=params.get('theme');var stored=window.localStorage.getItem('fight-age-verification:theme:v1')||window.localStorage.getItem('theme');if(stored==='light'||stored==='dark'){window.localStorage.setItem('fight-age-verification:theme:v1',stored);window.localStorage.removeItem('theme')}var resolved=query==='light'||query==='dark'?query:stored==='light'||stored==='dark'?stored:'light';var root=document.documentElement;root.classList.remove('light','dark');root.classList.add(resolved);root.setAttribute('data-theme',resolved);root.style.colorScheme=resolved;}catch(e){}})();`
+const THEME_INIT_SCRIPT = `(function(){try{if('scrollRestoration'in window.history){window.history.scrollRestoration='manual'}var params=new URLSearchParams(window.location.search);var query=params.get('theme');var stored=window.localStorage.getItem('fight-age-verification:theme:v1')||window.localStorage.getItem('theme');if(stored==='light'||stored==='dark'){window.localStorage.setItem('fight-age-verification:theme:v1',stored);window.localStorage.removeItem('theme')}var resolved=query==='light'||query==='dark'?query:stored==='light'||stored==='dark'?stored:'light';var root=document.documentElement;root.classList.remove('light','dark');root.classList.add(resolved);root.setAttribute('data-theme',resolved);root.style.colorScheme=resolved;}catch(e){}})();`
 const siteUrl = 'https://fightageverification.com'
 const metaTitle = dictionaries[defaultLocale].meta.title
 const metaDescription = dictionaries[defaultLocale].meta.description
 const metaKeywords = dictionaries[defaultLocale].meta.keywords
+const shareImageAlt = dictionaries[defaultLocale].meta.shareImageAlt
 const ogImageUrl = `${siteUrl}/og-image.png`
 
 export const Route = createRootRoute({
@@ -63,6 +64,14 @@ export const Route = createRootRoute({
         content: metaTitle,
       },
       {
+        property: 'og:locale',
+        content: 'en_US',
+      },
+      {
+        property: 'og:locale:alternate',
+        content: 'sv_SE',
+      },
+      {
         property: 'og:title',
         content: metaTitle,
       },
@@ -73,6 +82,10 @@ export const Route = createRootRoute({
       {
         property: 'og:image',
         content: ogImageUrl,
+      },
+      {
+        property: 'og:image:alt',
+        content: shareImageAlt,
       },
       {
         property: 'og:image:width',
@@ -98,6 +111,10 @@ export const Route = createRootRoute({
         name: 'twitter:image',
         content: ogImageUrl,
       },
+      {
+        name: 'twitter:image:alt',
+        content: shareImageAlt,
+      },
     ],
     links: [
       {
@@ -106,8 +123,8 @@ export const Route = createRootRoute({
       },
       {
         rel: 'icon',
-        href: '/favicon.svg',
-        type: 'image/svg+xml',
+        href: '/favicon.png',
+        type: 'image/png',
       },
       {
         rel: 'manifest',
@@ -122,16 +139,6 @@ export const Route = createRootRoute({
       {
         rel: 'canonical',
         href: siteUrl,
-      },
-      {
-        rel: 'alternate',
-        hrefLang: 'en',
-        href: `${siteUrl}/?lang=en`,
-      },
-      {
-        rel: 'alternate',
-        hrefLang: 'sv',
-        href: `${siteUrl}/?lang=sv`,
       },
       {
         rel: 'alternate',
@@ -152,9 +159,21 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         {children}
-        <Analytics />
+        <VercelAnalytics />
         <Scripts />
       </body>
     </html>
   )
+}
+
+function VercelAnalytics() {
+  if (typeof window === 'undefined' || isLocalHost(window.location.hostname)) {
+    return null
+  }
+
+  return <Analytics />
+}
+
+function isLocalHost(hostname: string) {
+  return hostname === 'localhost' || hostname === '127.0.0.1' || hostname === '::1'
 }

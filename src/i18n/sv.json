@@ -2,6 +2,7 @@
   "meta": {
     "title": "Fight Age Verification",
     "description": "Gör din röst hörd mot obligatoriska ålderskontroller och ID-krav som begränsar barns och ungas rättigheter online.",
+    "shareImageAlt": "Förhandsvisning av kampanjen Fight Age Verification med budskapet att internet inte ska kräva ID.",
     "keywords": "åldersverifiering, ID-krav online, sociala medier åldersgräns, barns rättigheter online, digital frihet, yttrandefrihet, EU age verification, Sverige åldersgräns sociala medier"
   },
   "nav": {
@@ -181,6 +182,7 @@
     "toLabel": "Mottagare",
     "moreRecipients": "till",
     "subjectLabel": "Ämne",
+    "emailLabel": "E-post",
     "messageLabel": "Meddelande",
     "subject": "Barn ska skyddas online, men inte genom generell ID-kontroll",
     "copyBody": "Kopiera text",
@@ -211,7 +213,7 @@
           {
             "name": "Svenska Europaparlamentariker",
             "role": "Kontakta Sveriges 21 ledamöter i Europaparlamentet via parlamentets lista",
-            "email": "EPstockholm@europarl.europa.eu"
+            "email": "epstockholm@ep.europa.eu"
           }
         ]
       },
@@ -246,16 +248,21 @@
         ]
       },
       {
-        "title": "🇬🇧🇦🇺 UK/Australien",
+        "title": "🇦🇺 Australien",
         "people": [
           {
             "name": "Anika Wells",
-            "role": "Australiens kommunikationsminister, implementerar åldersgränser för sociala medier",
+            "role": "Kommunikationsminister, implementerar Australiens 16-årsgräns för sociala medier",
             "email": "Anika.Wells.MP@aph.gov.au"
-          },
+          }
+        ]
+      },
+      {
+        "title": "🇬🇧 Storbritannien",
+        "people": [
           {
             "name": "Liz Kendall",
-            "role": "Storbritanniens minister för Science, Innovation and Technology; nuvarande ansvarig minister för DSIT och online safety-politik",
+            "role": "Minister för Science, Innovation and Technology, ansvarig för DSIT och Online Safety Act-politik",
             "email": "correspondence@dsit.gov.uk"
           }
         ]
@@ -355,32 +362,32 @@
     "about": "Om",
     "privacy": "Integritet",
     "contact": "Kontakt",
-    "source": "Källkod",
+    "source": "GitHub",
     "sourceHref": "https://github.com/joelhagvall/fight-age-verification",
-    "copyright": "Copyright {year} Joel Hägvall."
+    "copyright": "© {year} Joel Hägvall."
   },
   "pages": {
     "back": "Tillbaka",
     "about": {
       "kicker": "Om",
       "title": "Varför sidan finns",
-      "body": "Fight Age Verification är en enkel kampanjsida för att göra det lättare att förstå och ifrågasätta generella ID-krav på internet. Poängen är inte att förneka barns säkerhet, utan att visa att skydd kan byggas utan att göra hela webben beroende av identitetskontroller.",
+      "body": "Fight Age Verification är en liten kampanjsida om breda ålderskontroller och ID-krav online. Den förklarar problemet, länkar till källor och hjälper människor att kontakta beslutsfattare.",
       "sections": [
         {
           "title": "Vad sidan gör",
-          "body": "Sidan sammanfattar problemet, visar vem som påverkas och gör det enkelt att kontakta beslutsfattare med ett färdigt mail som går att redigera."
+          "body": "Den sammanfattar frågan, visar vem som kan påverkas och ger ett redigerbart mailutkast som du kan skicka från din egen mailapp."
         },
         {
           "title": "Vad sidan inte är",
-          "body": "Det här är inte juridisk rådgivning, en nyhetstjänst eller ett verktyg för åldersverifiering. Sidan samlar argument och källor för opinion och samtal."
+          "body": "Det här är inte juridisk rådgivning, en nyhetstjänst, en officiell myndighetssida eller ett verktyg för åldersverifiering. Källorna finns med så att läsare själva kan kontrollera påståendena."
         },
         {
           "title": "Grundhållning",
-          "body": "Barn ska skyddas online. Men skyddet bör riktas mot faktisk skada, inte göra vardagligt internet beroende av generell identitetskontroll."
+          "body": "Barn ska skyddas online. Men skyddet bör riktas mot faktisk skada i stället för att göra vardagligt internet beroende av generell identitetskontroll."
         },
         {
           "title": "Byggd av",
-          "body": "Sidan är byggd av Joel Hägvall.",
+          "body": "Sidan är byggd fristående av Joel Hägvall. Den är inte kopplad till personerna, partierna, regeringarna eller institutionerna som nämns på sidan.",
           "link": "https://joelhagvall.com",
           "href": "https://joelhagvall.com"
         },
@@ -395,7 +402,7 @@
     "privacy": {
       "kicker": "Integritet",
       "title": "Integritetspolicy",
-      "body": "Sidan är byggd för att samla så lite information som möjligt. Den behöver ingen inloggning, ingen serverdatabas och ingen identitetskontroll.",
+      "body": "Sidan är byggd för att samla så lite information som möjligt. Du kan läsa den och använda mailutkastet utan att logga in eller identifiera dig.",
       "sections": [
         {
           "title": "Ingen konto- eller ID-insamling",
@@ -403,34 +410,34 @@
         },
         {
           "title": "Lokala inställningar",
-          "body": "Val som språk, tema och markerade mottagare kan sparas lokalt i din webbläsare. De skickas inte till någon server av den här sidan."
+          "body": "Val som språk, tema och markerade mottagare kan sparas i webbläsaren på din enhet. De används för att sidan ska fungera smidigare för dig och skickas inte in via något formulär."
         },
         {
           "title": "Mailfunktionen",
-          "body": "När du öppnar mailet används din egen mailklient. Mottagare, ämne och text skickas vidare till mailklienten via en mailto-länk."
+          "body": "När du klickar på Öppna email används din egen mailapp. Mottagare, ämne och text skickas vidare via en mailto-länk så att du kan granska och ändra meddelandet innan du skickar."
         },
         {
           "title": "Vercel Analytics",
-          "body": "Sidan använder Vercel Analytics för enkel, aggregerad trafikstatistik efter deploy. Den används inte för konton, formulär eller identitetsinsamling."
+          "body": "Sidan använder Vercel Analytics för enkel, aggregerad trafikstatistik, till exempel sidvisningar. Den används inte för konton, formulär eller identitetsinsamling."
         }
       ]
     },
     "contact": {
-      "kicker": "Contact",
+      "kicker": "Kontakt",
       "title": "Kontakt",
-      "body": "Har du bättre research, fler mottagare eller en förbättrad mailmall? Skicka gärna ett förslag.",
+      "body": "Hittat ett fel, en starkare källa, en bättre mottagare eller tydligare formulering? Skicka gärna ett förslag.",
       "sections": [
         {
           "title": "Vad du kan skicka",
-          "body": "Tipsa gärna om bättre källor, fel i texten, fler relevanta mottagare eller tydligare formuleringar."
+          "body": "Tipsa gärna om faktafel, källänkar, fler relevanta mottagare eller formuleringar som gör sidan lättare att förstå."
         },
         {
           "title": "Håll det användbart",
-          "body": "Skicka helst konkreta förslag med länk till källa. Då är det lättare att granska och lägga in ändringen."
+          "body": "Konkreta förslag med länk till källa är lättast att kontrollera. Skriv gärna tillräckligt med sammanhang för att förstå vad som bör ändras och varför."
         },
         {
           "title": "Byggd av",
-          "body": "Sidan är byggd av Joel Hägvall. För direkt kontakt med personen bakom projektet, använd länkarna nedan.",
+          "body": "Sidan är byggd fristående av Joel Hägvall. För direkt kontakt med personen bakom projektet, använd länkarna nedan.",
           "link": "https://joelhagvall.com",
           "href": "https://joelhagvall.com"
         },

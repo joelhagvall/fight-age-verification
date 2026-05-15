@@ -10,6 +10,7 @@ const config = defineConfig({
   resolve: { tsconfigPaths: true },
   build: {
     chunkSizeWarningLimit: 600,
+    sourcemap: true,
   },
   plugins: [
     tanstackStart({

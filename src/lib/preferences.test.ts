@@ -2,8 +2,11 @@
 
 import { beforeEach, describe, expect, it } from 'vitest'
 import {
+  LOCALE_STORAGE_KEY,
   THEME_STORAGE_KEY,
+  readLocalePreference,
   readThemePreference,
+  writeLocalePreference,
   writeThemePreference,
 } from './preferences'
 import { installMockLocalStorage } from './test-storage'
@@ -28,5 +31,12 @@ describe('preferences', () => {
 
     expect(window.localStorage.getItem(THEME_STORAGE_KEY)).toBe('light')
     expect(window.localStorage.getItem('theme')).toBeNull()
+  })
+
+  it('reads and writes locale preferences', () => {
+    writeLocalePreference('sv')
+
+    expect(readLocalePreference()).toBe('sv')
+    expect(window.localStorage.getItem(LOCALE_STORAGE_KEY)).toBe('sv')
   })
 })

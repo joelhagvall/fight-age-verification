@@ -4,6 +4,7 @@ import CampaignPage from '#/components/campaign-page'
 import Footer from '#/components/footer'
 import Header from '#/components/header'
 import { parseLocaleSearch } from '#/lib/locale'
+import { useIsomorphicLayoutEffect } from '#/lib/use-isomorphic-layout-effect'
 import { useLocale } from '#/lib/use-locale'
 
 export const Route = createFileRoute('/')({
@@ -13,9 +14,9 @@ export const Route = createFileRoute('/')({
 
 function App() {
   const { lang } = Route.useSearch()
-  const { locale, t, toggleLocale } = useLocale(lang)
+  const { locale, t, toggleLocale } = useLocale(lang, true)
 
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     const sectionId = new URLSearchParams(window.location.search).get('section')
     if (sectionId) {
       document.getElementById(sectionId)?.scrollIntoView({ block: 'start' })
@@ -24,7 +25,9 @@ function App() {
 
     const saved = sessionStorage.getItem('home:scrollY')
     if (saved) window.scrollTo(0, parseInt(saved, 10))
+  }, [])
 
+  useEffect(() => {
     const save = () => {
       sessionStorage.setItem('home:scrollY', String(window.scrollY))
     }
@@ -41,7 +44,7 @@ function App() {
       </a>
       <Header t={t} locale={locale} onToggleLocale={toggleLocale} />
       <CampaignPage t={t} />
-      <Footer t={t} locale={locale} />
+      <Footer t={t} />
     </>
   )
 }

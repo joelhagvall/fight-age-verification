@@ -3,10 +3,9 @@ import type { Dictionary } from '#/i18n'
 
 interface FooterProps {
   t: Dictionary
-  locale: 'en' | 'sv'
 }
 
-export default function Footer({ t, locale }: FooterProps) {
+export default function Footer({ t }: FooterProps) {
   const currentYear = new Date().getFullYear().toString()
   const copyright = t.footer.copyright.replace('{year}', currentYear)
 
@@ -14,13 +13,13 @@ export default function Footer({ t, locale }: FooterProps) {
     <footer className="mt-12 border-t px-4 pb-14 pt-10 text-muted-foreground">
       <div className="mx-auto flex max-w-7xl flex-col items-center gap-4">
         <nav className="flex flex-wrap justify-center gap-4 text-sm">
-          <Link className="nav-link" to="/about" search={{ lang: locale }}>
+          <Link className="nav-link" to="/about">
             {t.footer.about}
           </Link>
-          <Link className="nav-link" to="/privacy" search={{ lang: locale }}>
+          <Link className="nav-link" to="/privacy">
             {t.footer.privacy}
           </Link>
-          <Link className="nav-link" to="/contact" search={{ lang: locale }}>
+          <Link className="nav-link" to="/contact">
             {t.footer.contact}
           </Link>
           <a

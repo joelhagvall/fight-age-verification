@@ -4,6 +4,7 @@ import MenuIcon from 'lucide-react/dist/esm/icons/menu.mjs'
 import XIcon from 'lucide-react/dist/esm/icons/x.mjs'
 import type { Dictionary } from '#/i18n'
 import { buttonVariants } from '#/components/ui/button'
+import { writeLocalePreference } from '#/lib/preferences'
 import { cn } from '#/lib/utils'
 import ThemeToggle from './theme-toggle'
 
@@ -118,7 +119,11 @@ export default function Header({ t, locale, onToggleLocale }: HeaderProps) {
           key={item.id}
           to="/"
           search={homeSearch(item.id)}
-          onClick={() => { setIsMenuOpen(false); }}
+          onMouseDown={() => { writeLocalePreference(locale); }}
+          onClick={() => {
+            writeLocalePreference(locale)
+            setIsMenuOpen(false)
+          }}
           aria-current={activeSection === item.id ? 'page' : undefined}
           className={cn(className, item.className, activeClassName)}
           translate={item.translate}
@@ -160,6 +165,8 @@ export default function Header({ t, locale, onToggleLocale }: HeaderProps) {
           <Link
             to="/"
             search={{ lang: locale }}
+            onMouseDown={() => { writeLocalePreference(locale); }}
+            onClick={() => { writeLocalePreference(locale); }}
             className="nav-link font-medium md:hidden"
             translate="no"
           >

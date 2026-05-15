@@ -2,7 +2,7 @@
 
 import { beforeEach, describe, expect, it } from 'vitest'
 import { defaultLocale } from '#/i18n'
-import { applyLocale, parseLocaleSearch, persistLocaleInUrl } from './locale'
+import { applyLocale, applyLocaleAndCleanUrl, parseLocaleSearch } from './locale'
 import { installMockLocalStorage } from './test-storage'
 
 describe('locale helpers', () => {
@@ -17,6 +17,10 @@ describe('locale helpers', () => {
     expect(parseLocaleSearch({ lang: 'sv' })).toEqual({ lang: 'sv' })
   })
 
+  it('keeps campaign section search params', () => {
+    expect(parseLocaleSearch({ section: 'targets' })).toEqual({ section: 'targets' })
+  })
+
   it('drops unsupported locale search params', () => {
     expect(parseLocaleSearch({ lang: 'de' })).toEqual({})
   })
@@ -27,12 +31,12 @@ describe('locale helpers', () => {
     expect(document.documentElement.lang).toBe('sv')
   })
 
-  it('persists locale in the current URL', () => {
-    window.history.replaceState(null, '', '/?section=targets')
+  it('cleans locale from the current URL after applying it', () => {
+    window.history.replaceState(null, '', '/?section=targets&lang=sv')
 
-    persistLocaleInUrl('sv')
+    applyLocaleAndCleanUrl('sv')
 
     expect(document.documentElement.lang).toBe('sv')
-    expect(window.location.search).toBe('?section=targets&lang=sv')
+    expect(window.location.search).toBe('?section=targets')
   })
 })

@@ -20,7 +20,7 @@ function About() {
     <>
       <Header t={t} locale={locale} onToggleLocale={toggleLocale} />
       <main className="mx-auto min-h-[70svh] max-w-3xl px-6 pb-20 pt-28 text-center">
-        <BackToCampaignLink locale={locale} label={t.pages.back} />
+        <BackToCampaignLink label={t.pages.back} />
         <h1 className="text-5xl font-semibold tracking-tight">
           {t.pages.about.title}
         </h1>
@@ -50,7 +50,7 @@ function About() {
           ))}
         </div>
       </main>
-      <Footer t={t} locale={locale} />
+      <Footer t={t} />
     </>
   )
 }

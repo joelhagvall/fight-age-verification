@@ -1,6 +1,9 @@
+import type { Locale } from '#/i18n'
+
 export type ThemeMode = 'light' | 'dark'
 
 export const THEME_STORAGE_KEY = 'fight-age-verification:theme:v1'
+export const LOCALE_STORAGE_KEY = 'fight-age-verification:locale:v1'
 
 const LEGACY_THEME_STORAGE_KEY = 'theme'
 
@@ -58,4 +61,13 @@ export function readThemePreference(): ThemeMode | null {
 export function writeThemePreference(mode: ThemeMode) {
   writeStorage(THEME_STORAGE_KEY, mode)
   removeStorage(LEGACY_THEME_STORAGE_KEY)
+}
+
+export function readLocalePreference(): Locale | null {
+  const stored = readStorage(LOCALE_STORAGE_KEY)
+  return stored === 'en' || stored === 'sv' ? stored : null
+}
+
+export function writeLocalePreference(locale: Locale) {
+  writeStorage(LOCALE_STORAGE_KEY, locale)
 }

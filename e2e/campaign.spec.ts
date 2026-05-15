@@ -38,11 +38,14 @@ test('renders campaign page and toggles language and theme', async ({ page }) =>
     'href',
     /mailto:/
   )
+  await page.getByRole('button', { name: 'Back' }).click()
+  await expect(page.getByRole('button', { name: 'Review email' })).toBeVisible()
   await expect(page.locator('html')).not.toHaveClass(/dark/)
   await expectThemeToggle(page, 'Use dark mode')
 
   await page.waitForTimeout(500)
   await page.getByRole('button', { name: 'SV', exact: true }).click()
+  await expect(page).toHaveURL(/\/$/)
   await expect(
     page.getByRole('heading', {
       name: 'Internet ska inte kräva ID.',
@@ -73,7 +76,7 @@ test('footer pages can navigate back into the campaign flow', async ({ page }) =
 
   await expect(page.getByRole('heading', { name: 'Varför sidan finns' })).toBeVisible()
   await clickNavItem(page, 'Maila')
-  await expect(page).toHaveURL(/\/\?lang=sv&section=targets$/)
+  await expect(page).toHaveURL(/\/\?section=targets$/)
   await expect(page.getByRole('heading', { name: 'Gör din röst hörd' })).toBeVisible()
 })
 

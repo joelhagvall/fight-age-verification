@@ -2,6 +2,7 @@
   "meta": {
     "title": "Fight Age Verification",
     "description": "Make your voice heard against mandatory age checks and ID requirements that restrict children’s and young people’s rights online.",
+    "shareImageAlt": "Fight Age Verification campaign preview with the message that the internet should not require ID.",
     "keywords": "age verification, online ID checks, social media age limit, children’s rights online, digital freedom, freedom of expression, EU age verification, Sweden social media age limit"
   },
   "nav": {
@@ -181,6 +182,7 @@
     "toLabel": "Recipients",
     "moreRecipients": "more",
     "subjectLabel": "Subject",
+    "emailLabel": "Email",
     "messageLabel": "Message",
     "subject": "Protect children online, but not through general ID checks",
     "copyBody": "Copy text",
@@ -211,7 +213,7 @@
           {
             "name": "Swedish Members of the European Parliament",
             "role": "Reach Sweden’s 21 MEPs through the Parliament liaison office/list",
-            "email": "EPstockholm@europarl.europa.eu"
+            "email": "epstockholm@ep.europa.eu"
           }
         ]
       },
@@ -246,16 +248,21 @@
         ]
       },
       {
-        "title": "🇬🇧🇦🇺 UK / Australia",
+        "title": "🇦🇺 Australia",
         "people": [
           {
             "name": "Anika Wells",
-            "role": "Australia's Minister for Communications, implementing the social media minimum age rules",
+            "role": "Minister for Communications, implementing Australia’s under-16 social media minimum age rules",
             "email": "Anika.Wells.MP@aph.gov.au"
-          },
+          }
+        ]
+      },
+      {
+        "title": "🇬🇧 UK",
+        "people": [
           {
             "name": "Liz Kendall",
-            "role": "UK Secretary of State for Science, Innovation and Technology; current minister responsible for DSIT and online safety policy",
+            "role": "Secretary of State for Science, Innovation and Technology, responsible for DSIT and Online Safety Act policy",
             "email": "correspondence@dsit.gov.uk"
           }
         ]
@@ -355,32 +362,32 @@
     "about": "About",
     "privacy": "Privacy",
     "contact": "Contact",
-    "source": "Source code",
+    "source": "GitHub",
     "sourceHref": "https://github.com/joelhagvall/fight-age-verification",
-    "copyright": "Copyright {year} Joel Hägvall."
+    "copyright": "© {year} Joel Hägvall."
   },
   "pages": {
     "back": "Back",
     "about": {
       "kicker": "About",
       "title": "Why this page exists",
-      "body": "Fight Age Verification is a simple campaign page for understanding and challenging broad ID requirements on the internet. The point is not to dismiss child safety, but to show that protection can be built without making the whole web depend on identity checks.",
+      "body": "Fight Age Verification is a small campaign page about broad age checks and ID requirements online. It explains the concern, links to sources, and helps people contact decision-makers.",
       "sections": [
         {
           "title": "What the site does",
-          "body": "The site summarizes the problem, shows who is affected, and makes it easy to contact decision-makers with an editable email."
+          "body": "It summarizes the issue, shows who may be affected, and provides an editable email draft you can send from your own mail app."
         },
         {
           "title": "What the site is not",
-          "body": "This is not legal advice, a news service, or an age verification tool. It collects arguments and sources for advocacy and discussion."
+          "body": "It is not legal advice, a news service, an official government page, or an age verification tool. The sources are provided so readers can check the claims themselves."
         },
         {
           "title": "Core position",
-          "body": "Children should be protected online. But protection should target real harm, not make ordinary internet use depend on general identity checks."
+          "body": "Children should be protected online. But protection should target real harm instead of making ordinary internet use depend on general identity checks."
         },
         {
           "title": "Built by",
-          "body": "The site is built by Joel Hägvall.",
+          "body": "The site is built independently by Joel Hägvall. It is not affiliated with the people, parties, governments, or institutions mentioned on the site.",
           "link": "https://joelhagvall.com",
           "href": "https://joelhagvall.com"
         },
@@ -395,7 +402,7 @@
     "privacy": {
       "kicker": "Privacy",
       "title": "Privacy policy",
-      "body": "The site is built to collect as little information as possible. It does not need login, a server database, or identity checks.",
+      "body": "The site is built to collect as little information as possible. You can read it and use the email draft without logging in or identifying yourself.",
       "sections": [
         {
           "title": "No account or ID collection",
@@ -403,34 +410,34 @@
         },
         {
           "title": "Local preferences",
-          "body": "Choices such as language, theme, and selected recipients may be saved locally in your browser. They are not sent to a server by this site."
+          "body": "Choices such as language, theme, and selected recipients may be saved in your browser on your device. They are used to keep the site convenient for you and are not submitted through a form."
         },
         {
           "title": "Email function",
-          "body": "When you open the email, your own mail client is used. Recipients, subject, and text are passed to the mail client through a mailto link."
+          "body": "When you click Open email, your own mail app is used. The recipients, subject, and text are passed through a mailto link so you can review and edit the message before sending."
         },
         {
           "title": "Vercel Analytics",
-          "body": "The site uses Vercel Analytics for basic, aggregate traffic stats after deployment. It is not used for accounts, forms, or identity collection."
+          "body": "The site uses Vercel Analytics for basic, aggregate traffic statistics, such as page views. It is not used for accounts, forms, or identity collection."
         }
       ]
     },
     "contact": {
       "kicker": "Contact",
       "title": "Contact",
-      "body": "Have better research, more recipients, or an improved email template? Send a suggestion.",
+      "body": "Found a mistake, a stronger source, a better recipient, or clearer wording? Send a suggestion.",
       "sections": [
         {
           "title": "What to send",
-          "body": "Useful suggestions include stronger sources, corrections, more relevant recipients, or clearer wording."
+          "body": "Useful suggestions include factual corrections, source links, more relevant recipients, or wording that makes the page easier to understand."
         },
         {
           "title": "Keep it practical",
-          "body": "Concrete suggestions with a source link are easiest to review and add."
+          "body": "Concrete suggestions with a source link are easiest to check. Please include enough context to understand what should change and why."
         },
         {
           "title": "Built by",
-          "body": "The site is built by Joel Hägvall. For direct contact with the person behind the project, use the links below.",
+          "body": "The site is built independently by Joel Hägvall. For direct contact with the person behind the project, use the links below.",
           "link": "https://joelhagvall.com",
           "href": "https://joelhagvall.com"
         },

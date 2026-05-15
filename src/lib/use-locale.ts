@@ -1,15 +1,32 @@
-import { startTransition, useEffect, useState } from 'react'
+import { startTransition, useState } from 'react'
 import { dictionaries, defaultLocale, type Locale } from '#/i18n'
-import { applyLocale, persistLocaleInUrl } from '#/lib/locale'
+import { applyLocale, applyLocaleAndCleanUrl } from '#/lib/locale'
+import { readLocalePreference, writeLocalePreference } from '#/lib/preferences'
+import { useIsomorphicLayoutEffect } from '#/lib/use-isomorphic-layout-effect'
 
-export function useLocale(lang?: Locale) {
-  const [locale, setLocale] = useState(lang ?? defaultLocale)
+function initialLocale(lang?: Locale) {
+  return lang ?? readLocalePreference() ?? defaultLocale
+}
 
-  useEffect(() => {
-    const nextLocale = lang ?? defaultLocale
+export function useLocale(lang?: Locale, cleanUrl = false) {
+  const [locale, setLocale] = useState(() => initialLocale(lang))
+
+  useIsomorphicLayoutEffect(() => {
+    const nextLocale = initialLocale(lang)
     startTransition(() => {
       setLocale(nextLocale)
     })
+    if (lang) {
+      writeLocalePreference(lang)
+      if (cleanUrl) {
+        applyLocaleAndCleanUrl(nextLocale)
+        return
+      }
+
+      applyLocale(nextLocale)
+      return
+    }
+
     applyLocale(nextLocale)
   }, [lang])
 
@@ -18,7 +35,8 @@ export function useLocale(lang?: Locale) {
     startTransition(() => {
       setLocale(nextLocale)
     })
-    persistLocaleInUrl(nextLocale)
+    writeLocalePreference(nextLocale)
+    applyLocaleAndCleanUrl(nextLocale)
   }
 
   return {
