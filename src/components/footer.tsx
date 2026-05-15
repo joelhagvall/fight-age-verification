@@ -26,6 +26,7 @@ export default function Footer({ t }: FooterProps) {
           <ExternalLink
             className="nav-link inline-flex items-center gap-1.5"
             href={t.footer.sourceHref}
+            iconLayout="flex"
           >
             <svg
               viewBox="0 0 24 24"

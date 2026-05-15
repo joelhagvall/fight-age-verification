@@ -21,7 +21,7 @@
   },
   "hero": {
     "title": "The internet should not require ID.",
-    "lead": "Governments are moving toward mandatory age checks online. In practice, that can mean showing ID to read, create accounts, or take part online.",
+    "lead": "Governments are moving toward mandatory age checks online. In practice, that can mean showing ID to read, create accounts, or take part in digital spaces.",
     "primary": "Make your voice heard",
     "secondary": "Why this matters"
   },
@@ -108,7 +108,7 @@
   "questions": {
     "kicker": "The argument",
     "title": "Why ID checks miss the point",
-    "lead": "Children should be protected online. But the answer cannot be to make ID checks the key to reading, learning, creating, or joining communities.",
+    "lead": "Children should be protected online. But the answer cannot be to make ID checks the key to reading, learning, creating, or taking part in digital spaces.",
     "items": [
       {
         "question": "What are they trying to do?",
@@ -116,22 +116,22 @@
       },
       {
         "question": "What is the problem?",
-        "answer": "Age checks sound simple, but they often become identity checks. Private reading, account creation, and participation can start depending on ID."
+        "answer": "Age checks sound simple, but they often become identity checks. Accessing content, creating accounts, and taking part online can start depending on ID."
       },
       {
         "question": "Who is affected?",
-        "answer": "Young people seeking support, learning, following culture, or building something. Also adults who do not want lawful content, private browsing, or political debate to require ID."
+        "answer": "Young people seeking support, learning, following news and culture, or building something. Also adults who do not want lawful content, private browsing, or political debate to require ID."
       },
       {
         "question": "What should be done instead?",
-        "answer": "Target the harm directly: grooming, exploitation, fraud, harassment, poor moderation, and addictive or manipulative design. Give parents better tools to guide their own children online, without making ID checks a basic requirement for the internet."
+        "answer": "Target actual harm: grooming, exploitation, fraud, and harassment. Put stronger demands on platforms' moderation, default settings, and design. Give parents better tools to guide their own children online, without making ID checks a basic requirement for the internet."
       }
     ]
   },
   "scenarios": {
     "kicker": "Scenarios",
     "title": "Who is actually affected?",
-    "lead": "An ID requirement sounds technical. In practice, it affects who can read, create, ask, debate, build, and belong.",
+    "lead": "An ID requirement sounds technical. In practice, it affects who can read, create, ask questions, join the debate, and build something of their own.",
     "items": [
       {
         "id": "bullied",
