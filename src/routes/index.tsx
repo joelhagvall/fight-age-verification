@@ -1,11 +1,13 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { useEffect } from 'react'
 import CampaignPage from '#/components/campaign-page'
 import Footer from '#/components/footer'
 import Header from '#/components/header'
 import { parseLocaleSearch } from '#/lib/locale'
 import { useIsomorphicLayoutEffect } from '#/lib/use-isomorphic-layout-effect'
 import { useLocale } from '#/lib/use-locale'
+
+const HOME_SCROLL_KEY = 'fight-age-verification:home-scroll-y'
+const RESTORE_HOME_SCROLL_KEY = 'fight-age-verification:restore-home-scroll'
 
 export const Route = createFileRoute('/')({
   validateSearch: parseLocaleSearch,
@@ -23,17 +25,26 @@ function App() {
       return
     }
 
-    const saved = sessionStorage.getItem('home:scrollY')
-    if (saved) window.scrollTo(0, parseInt(saved, 10))
+    if (sessionStorage.getItem(RESTORE_HOME_SCROLL_KEY) === 'true') {
+      sessionStorage.removeItem(RESTORE_HOME_SCROLL_KEY)
+      const savedScrollY = Number(sessionStorage.getItem(HOME_SCROLL_KEY))
+      if (Number.isFinite(savedScrollY)) {
+        window.scrollTo(0, savedScrollY)
+      }
+    }
   }, [])
 
-  useEffect(() => {
-    const save = () => {
-      sessionStorage.setItem('home:scrollY', String(window.scrollY))
+  useIsomorphicLayoutEffect(() => {
+    function saveScrollPosition() {
+      sessionStorage.setItem(HOME_SCROLL_KEY, String(window.scrollY))
     }
-    window.addEventListener('scroll', save, { passive: true })
+
+    saveScrollPosition()
+    window.addEventListener('scroll', saveScrollPosition, { passive: true })
+
     return () => {
-      window.removeEventListener('scroll', save)
+      saveScrollPosition()
+      window.removeEventListener('scroll', saveScrollPosition)
     }
   }, [])
 

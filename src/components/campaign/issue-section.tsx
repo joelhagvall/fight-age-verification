@@ -1,7 +1,7 @@
-import ExternalLinkIcon from 'lucide-react/dist/esm/icons/external-link.mjs'
 import LandmarkIcon from 'lucide-react/dist/esm/icons/landmark.mjs'
 import ScaleIcon from 'lucide-react/dist/esm/icons/scale.mjs'
 import ShieldAlertIcon from 'lucide-react/dist/esm/icons/shield-alert.mjs'
+import ExternalLink from '#/components/external-link'
 import type { Dictionary } from '#/i18n'
 
 interface IssueSectionProps {
@@ -38,19 +38,13 @@ export default function IssueSection({ t }: IssueSectionProps) {
                 </p>
                 <div className="flex flex-wrap gap-2 pt-2">
                   {item.sources.map((source) => (
-                    <a
+                    <ExternalLink
                       key={source.href}
                       href={source.href}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center gap-1 text-xs font-medium text-foreground underline underline-offset-4 hover:text-muted-foreground"
+                      className="text-xs font-medium text-foreground underline underline-offset-4 hover:text-muted-foreground"
                     >
                       {source.label}
-                      <ExternalLinkIcon
-                        className="size-3 opacity-60"
-                        aria-hidden="true"
-                      />
-                    </a>
+                    </ExternalLink>
                   ))}
                 </div>
               </div>
@@ -61,4 +55,3 @@ export default function IssueSection({ t }: IssueSectionProps) {
     </section>
   )
 }
-

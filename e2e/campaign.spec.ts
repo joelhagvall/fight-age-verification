@@ -56,7 +56,7 @@ test('renders campaign page and toggles language and theme', async ({ page }) =>
   await clickThemeToggle(page, 'Använd mörkt läge')
   await expect(page.locator('html')).toHaveClass(/dark/)
 
-  await expect(page.getByText('I am writing to ask you to oppose mandatory')).toBeVisible()
+  await expect(page.getByText('Jag skriver till dig för att be dig motsätta dig')).toBeVisible()
 })
 
 test('navbar does not mutate the URL', async ({ page }) => {
@@ -78,6 +78,25 @@ test('footer pages can navigate back into the campaign flow', async ({ page }) =
   await clickNavItem(page, 'Maila')
   await expect(page).toHaveURL(/\/\?section=targets$/)
   await expect(page.getByRole('heading', { name: 'Gör din röst hörd' })).toBeVisible()
+})
+
+test('back navigation restores the campaign scroll position', async ({ page }) => {
+  await page.goto('http://localhost:3000/')
+
+  await page.locator('#targets').scrollIntoViewIfNeeded()
+  await expect.poll(() => page.evaluate(() => window.scrollY)).toBeGreaterThan(500)
+  const campaignScrollY = await page.evaluate(() => window.scrollY)
+
+  await page.evaluate(() => {
+    document.querySelector<HTMLAnchorElement>('a[href="/about"]')?.click()
+  })
+  await expect(page.getByRole('heading', { name: 'Why this page exists' })).toBeVisible()
+  await page.getByRole('link', { name: 'Back' }).click()
+  await expect(page.getByRole('heading', { name: 'Make your voice heard' })).toBeVisible()
+
+  await expect
+    .poll(() => page.evaluate(() => window.scrollY))
+    .toBeGreaterThan(campaignScrollY - 200)
 })
 
 async function clickNavItem(page: import('@playwright/test').Page, name: string) {

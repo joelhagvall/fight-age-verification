@@ -28,17 +28,18 @@ interface EmailActionSectionProps {
 }
 
 const EMPTY_SELECTION_MESSAGE = ''
+const DEFAULT_SELECTED_GROUP_COUNT = 1
 
 export default function EmailActionSection({ t }: EmailActionSectionProps) {
   const previewCardRef = useRef<HTMLDivElement>(null)
   const targets = flattenTargets(t)
   const [selectedEmails, setSelectedEmails] = useState(() =>
-    targets.map((target) => target.email)
+    defaultSelectedEmails(targets)
   )
   const [customBody, setCustomBody] = useState(t.targets.body)
   const [isPreviewing, setIsPreviewing] = useState(false)
   const [selectionMessage, setSelectionMessage] = useState(EMPTY_SELECTION_MESSAGE)
-  const [selectedGroup, setSelectedGroup] = useState('all')
+  const [selectedGroup, setSelectedGroup] = useState('0')
   const [selectedTemplate, setSelectedTemplate] = useState<'short' | 'long'>('short')
 
   const selectedEmailSet = new Set(selectedEmails)
@@ -396,4 +397,10 @@ export default function EmailActionSection({ t }: EmailActionSectionProps) {
       </div>
     </section>
   )
+}
+
+function defaultSelectedEmails(targets: ReturnType<typeof flattenTargets>) {
+  return targets
+    .filter((target) => target.groupIndex < DEFAULT_SELECTED_GROUP_COUNT)
+    .map((target) => target.email)
 }

@@ -4,7 +4,7 @@ import { dictionaries, defaultLocale } from '#/i18n'
 
 import appCss from '../styles.css?url'
 
-const THEME_INIT_SCRIPT = `(function(){try{if('scrollRestoration'in window.history){window.history.scrollRestoration='manual'}var params=new URLSearchParams(window.location.search);var query=params.get('theme');var stored=window.localStorage.getItem('fight-age-verification:theme:v1')||window.localStorage.getItem('theme');if(stored==='light'||stored==='dark'){window.localStorage.setItem('fight-age-verification:theme:v1',stored);window.localStorage.removeItem('theme')}var resolved=query==='light'||query==='dark'?query:stored==='light'||stored==='dark'?stored:'light';var root=document.documentElement;root.classList.remove('light','dark');root.classList.add(resolved);root.setAttribute('data-theme',resolved);root.style.colorScheme=resolved;}catch(e){}})();`
+const THEME_INIT_SCRIPT = `(function(){try{var params=new URLSearchParams(window.location.search);var query=params.get('theme');var stored=window.localStorage.getItem('fight-age-verification:theme:v1')||window.localStorage.getItem('theme');if(stored==='light'||stored==='dark'){window.localStorage.setItem('fight-age-verification:theme:v1',stored);window.localStorage.removeItem('theme')}var resolved=query==='light'||query==='dark'?query:stored==='light'||stored==='dark'?stored:'light';var root=document.documentElement;root.classList.remove('light','dark');root.classList.add(resolved);root.setAttribute('data-theme',resolved);root.style.colorScheme=resolved;}catch(e){}})();`
 const siteUrl = 'https://fightageverification.com'
 const metaTitle = dictionaries[defaultLocale].meta.title
 const metaDescription = dictionaries[defaultLocale].meta.description

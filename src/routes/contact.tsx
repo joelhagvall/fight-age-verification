@@ -1,5 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 import BackToCampaignLink from '#/components/back-to-campaign-link'
+import ExternalLink from '#/components/external-link'
 import Footer from '#/components/footer'
 import Header from '#/components/header'
 import { localizedHeadMeta } from '#/i18n'
@@ -37,14 +38,12 @@ function Contact() {
                 {section.body}
               </p>
               {'href' in section ? (
-                <a
+                <ExternalLink
                   href={section.href}
-                  target="_blank"
-                  rel="noreferrer"
                   className="nav-link mt-4 inline-flex break-all text-sm font-medium underline underline-offset-4"
                 >
                   {section.link}
-                </a>
+                </ExternalLink>
               ) : null}
             </section>
           ))}

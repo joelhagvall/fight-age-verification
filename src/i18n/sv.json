@@ -161,7 +161,7 @@
   },
   "targets": {
     "title": "Gör din röst hörd",
-    "lead": "Välj vilka beslutsfattare du vill kontakta. Skicka utkastet som det är, eller ändra fritt så att det säger det du vill säga.",
+    "lead": "Välj vilka beslutsfattare du vill kontakta. Skicka utkastet som det är, eller ändra fritt så att det speglar vad du vill säga.",
     "selectedCount": "valda",
     "continue": "Granska mailet",
     "back": "Tillbaka",
@@ -271,6 +271,7 @@
   },
   "sources": {
     "title": "Källor",
+    "lastChecked": "Senast kontrollerat: 15 maj 2026",
     "items": [
       {
         "source": "Socialdemokraterna",
