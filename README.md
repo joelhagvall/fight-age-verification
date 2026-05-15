@@ -88,6 +88,6 @@ All user-facing text lives in:
 - `src/i18n/sv.json`
 
 
-Built by [Joel Hägvall](https://joelhagvall.com).
+Built by [Joel Hägvall](https://joelhagvall.com): https://joelhagvall.com
 
-Source code: [joelhagvall/fight-age-verification](https://github.com/joelhagvall/fight-age-verification).
+Source code: [https://github.com/joelhagvall/fight-age-verification](https://github.com/joelhagvall/fight-age-verification)
