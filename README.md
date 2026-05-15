@@ -5,7 +5,7 @@ Campaign site against mandatory online age verification.
 
 ## The Problem
 
-Age verification is often presented as a simple way to protect children online. In practice, broad ID checks can turn ordinary internet use into something that depends on identity systems, platform permission, and document-based access.
+Age verification is often presented as a simple way to protect children online. In practice, broad ID checks can turn ordinary internet use into something that depends on identity systems and platform permission.
 
 That affects both minors and adults. Young people can lose private access to information, support, culture, communities, debate, learning resources, and ways to create or start projects or businesses. Adults can also be pushed into showing ID to read lawful content, participate politically, or browse privately.
 
@@ -88,4 +88,6 @@ All user-facing text lives in:
 - `src/i18n/sv.json`
 
 
-Built by [Joel Hägvall](https://github.com/joelhagvall).
+Built by [Joel Hägvall](https://joelhagvall.com).
+
+Source code: [joelhagvall/fight-age-verification](https://github.com/joelhagvall/fight-age-verification).
