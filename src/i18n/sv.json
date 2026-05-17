@@ -63,11 +63,15 @@
     "items": [
       {
         "label": "EU",
-        "text": "Kommissionen driver en EU-app för åldersverifiering, och Europaparlamentet har föreslagit en gemensam 16-årsgräns för sociala medier.",
+        "text": "Kommissionen driver en EU-app för åldersverifiering, Europaparlamentet har föreslagit en gemensam 16-årsgräns för sociala medier, och kommissionens ordförande öppnar för ett EU-förslag redan i sommar.",
         "sources": [
           {
             "label": "EU-app",
             "href": "https://commission.europa.eu/news-and-media/news/european-age-verification-app-keep-children-safe-online-2026-04-15_en"
+          },
+          {
+            "label": "Förslag i sommar",
+            "href": "https://www.politico.eu/article/eu-social-media-ban-could-come-this-summer-ursula-von-der-leyen-says/"
           },
           {
             "label": "Europaparlamentet",
@@ -272,7 +276,9 @@
   },
   "sources": {
     "title": "Källor",
-    "lastChecked": "Senast kontrollerat: 15 maj 2026",
+    "toggle": "Visa fler källor",
+    "toggleOpen": "Dölj extra källor",
+    "lastChecked": "Senast kontrollerat: 17 maj 2026",
     "items": [
       {
         "source": "Socialdemokraterna",
@@ -309,6 +315,12 @@
         "type": "EU",
         "label": "European age verification app to keep children safe online",
         "href": "https://commission.europa.eu/news-and-media/news/european-age-verification-app-keep-children-safe-online-2026-04-15_en"
+      },
+      {
+        "source": "Politico",
+        "type": "Nyhet",
+        "label": "EU social media ban could come this summer, von der Leyen says",
+        "href": "https://www.politico.eu/article/eu-social-media-ban-could-come-this-summer-ursula-von-der-leyen-says/"
       },
       {
         "source": "EU-kommissionen",

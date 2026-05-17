@@ -63,11 +63,15 @@
     "items": [
       {
         "label": "EU",
-        "text": "The Commission is pushing an EU age verification app, and the European Parliament has proposed a harmonised minimum age of 16 for social media.",
+        "text": "The Commission is pushing an EU age verification app, the European Parliament has proposed a harmonised minimum age of 16 for social media, and the Commission president has opened the door to an EU proposal as early as this summer.",
         "sources": [
           {
             "label": "EU app",
             "href": "https://commission.europa.eu/news-and-media/news/european-age-verification-app-keep-children-safe-online-2026-04-15_en"
+          },
+          {
+            "label": "Summer proposal",
+            "href": "https://www.politico.eu/article/eu-social-media-ban-could-come-this-summer-ursula-von-der-leyen-says/"
           },
           {
             "label": "European Parliament",
@@ -272,7 +276,9 @@
   },
   "sources": {
     "title": "Sources",
-    "lastChecked": "Last checked: 15 May 2026",
+    "toggle": "Show more sources",
+    "toggleOpen": "Hide extra sources",
+    "lastChecked": "Last checked: 17 May 2026",
     "items": [
       {
         "source": "Swedish Social Democrats",
@@ -309,6 +315,12 @@
         "type": "EU",
         "label": "European age verification app to keep children safe online",
         "href": "https://commission.europa.eu/news-and-media/news/european-age-verification-app-keep-children-safe-online-2026-04-15_en"
+      },
+      {
+        "source": "Politico",
+        "type": "News",
+        "label": "EU social media ban could come this summer, von der Leyen says",
+        "href": "https://www.politico.eu/article/eu-social-media-ban-could-come-this-summer-ursula-von-der-leyen-says/"
       },
       {
         "source": "European Commission",
