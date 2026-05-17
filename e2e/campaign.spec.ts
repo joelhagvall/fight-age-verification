@@ -1,4 +1,12 @@
 import { expect, test } from '@playwright/test'
+import en from '../src/i18n/en.json' with { type: 'json' }
+import sv from '../src/i18n/sv.json' with { type: 'json' }
+
+const learningScenario = en.scenarios.items.find((item) => item.id === 'engineer')
+
+if (!learningScenario) {
+  throw new Error('Expected English learning scenario fixture to exist.')
+}
 
 test('renders campaign page and toggles language and theme', async ({ page }) => {
   await page.context().grantPermissions(['clipboard-write'], {
@@ -13,56 +21,56 @@ test('renders campaign page and toggles language and theme', async ({ page }) =>
 
   await expect(
     page.getByRole('heading', {
-      name: 'The internet should not require ID.',
+      name: en.hero.title,
     })
   ).toBeVisible()
-  await expect(page.getByRole('heading', { name: 'It is happening now' })).toBeVisible()
-  await expect(page.getByText('What starts as child safety')).toBeVisible()
+  await expect(page.getByRole('heading', { name: en.issue.title })).toBeVisible()
+  await expect(page.getByText(en.issue.lead)).toBeVisible()
   await expect(
     page.getByRole('heading', {
-      name: 'Why ID checks miss the point',
+      name: en.questions.title,
     })
   ).toBeVisible()
-  await expect(page.getByText('Age checks sound simple')).toBeVisible()
-  await expect(page.getByRole('heading', { name: 'Who is actually affected?' })).toBeVisible()
-  await expect(page.getByText('The person who wants to learn online')).toBeVisible()
-  await expect(page.getByRole('heading', { name: 'Make your voice heard' })).toBeVisible()
-  await expect(page.getByLabel('Country/region')).toBeVisible()
-  await expect(page.getByRole('button', { name: 'Short' })).toBeVisible()
-  await expect(page.getByRole('button', { name: 'Detailed' })).toBeVisible()
+  await expect(page.getByText(en.questions.lead)).toBeVisible()
+  await expect(page.getByRole('heading', { name: en.scenarios.title })).toBeVisible()
+  await expect(page.getByText(learningScenario.title)).toBeVisible()
+  await expect(page.getByRole('heading', { name: en.targets.title })).toBeVisible()
+  await expect(page.getByLabel(en.targets.countryLabel)).toBeVisible()
+  await expect(page.getByRole('button', { name: en.targets.templateShort })).toBeVisible()
+  await expect(page.getByRole('button', { name: en.targets.templateLong })).toBeVisible()
   await page.waitForTimeout(500)
-  const reviewButton = page.getByRole('button', { name: 'Review email' })
+  const reviewButton = page.getByRole('button', { name: en.targets.continue })
   await reviewButton.evaluate((button) => {
     button.scrollIntoView({ block: 'center' })
   })
   await expect(reviewButton).toBeInViewport()
   await reviewButton.click()
-  await expect(page.getByRole('button', { name: 'Copy text' })).toBeVisible()
+  await expect(page.getByRole('button', { name: en.targets.copyBody })).toBeVisible()
   await expect(page.getByText('I am writing to ask you to oppose mandatory')).toBeVisible()
-  await expect(page.getByRole('button', { name: 'Copy recipients' })).toBeVisible()
-  await expect(page.getByRole('link', { name: 'Open mail app' })).toHaveAttribute(
+  await expect(page.getByRole('button', { name: en.targets.copyRecipients })).toBeVisible()
+  await expect(page.getByRole('link', { name: en.targets.button })).toHaveAttribute(
     'href',
     /mailto:/
   )
-  await page.getByRole('button', { name: 'Copy text' }).click()
-  await expect(page.getByText('Copied.')).toBeVisible()
-  await page.getByRole('button', { name: 'Back' }).click()
-  await expect(page.getByRole('button', { name: 'Review email' })).toBeVisible()
-  await expect(page.getByText('Copied.')).not.toBeVisible()
+  await page.getByRole('button', { name: en.targets.copyBody }).click()
+  await expect(page.getByText(en.targets.copied)).toBeVisible()
+  await page.getByRole('button', { name: en.targets.back }).click()
+  await expect(page.getByRole('button', { name: en.targets.continue })).toBeVisible()
+  await expect(page.getByText(en.targets.copied)).not.toBeVisible()
   await expect(page.locator('html')).not.toHaveClass(/dark/)
-  await expectThemeToggle(page, 'Use dark mode')
+  await expectThemeToggle(page, en.nav.themeDark)
 
   await page.waitForTimeout(500)
-  await page.getByRole('button', { name: 'SV', exact: true }).click()
+  await page.getByRole('button', { name: en.nav.language, exact: true }).click()
   await expect(page).toHaveURL(/\/$/)
   await expect(
     page.getByRole('heading', {
-      name: 'Internet ska inte kräva ID.',
+      name: sv.hero.title,
     })
   ).toBeVisible()
-  await expect(page.getByRole('heading', { name: 'Gör din röst hörd' })).toBeVisible()
+  await expect(page.getByRole('heading', { name: sv.targets.title })).toBeVisible()
 
-  await clickThemeToggle(page, 'Använd mörkt läge')
+  await clickThemeToggle(page, sv.nav.themeDark)
   await expect(page.locator('html')).toHaveClass(/dark/)
 
   await expect(
