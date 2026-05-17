@@ -209,7 +209,7 @@ export default function EmailActionSection({ t }: EmailActionSectionProps) {
                   </SelectPositioner>
                 </Select>
               </label>
-              <div className="min-h-0 overflow-y-auto pr-1">
+              <div className="min-h-0 overflow-x-hidden overflow-y-auto pr-1">
                 <div className="grid gap-3">
                   {visibleTargets.map((target) => {
                     const checked = selectedEmailSet.has(target.email)
@@ -220,7 +220,7 @@ export default function EmailActionSection({ t }: EmailActionSectionProps) {
                           handleTargetCardClick(event, target.email)
                         }}
                         className={cn(
-                          'grid cursor-pointer gap-3 rounded-lg border p-4 [contain-intrinsic-size:auto_7rem] [content-visibility:auto] sm:grid-cols-[auto_1fr]',
+                          'grid min-w-0 cursor-pointer gap-3 rounded-lg border p-4 [contain-intrinsic-size:auto_7rem] [content-visibility:auto] sm:grid-cols-[auto_minmax(0,1fr)]',
                           checked
                             ? 'border-primary bg-background'
                             : 'bg-background/70 hover:bg-background'
@@ -234,14 +234,16 @@ export default function EmailActionSection({ t }: EmailActionSectionProps) {
                           aria-label={target.name}
                           className="mt-1 size-6"
                         />
-                        <span className="grid gap-1">
+                        <span className="grid min-w-0 gap-1">
                           <span className="flex min-w-0 flex-wrap items-center gap-2">
-                            <span className="font-semibold">{target.name}</span>
+                            <span className="min-w-0 break-words font-semibold">
+                              {target.name}
+                            </span>
                             <span className="rounded-md bg-muted px-1.5 py-0.5 text-xs text-muted-foreground">
                               {target.group}
                             </span>
                           </span>
-                          <span className="text-sm leading-6 text-muted-foreground">
+                          <span className="min-w-0 break-words text-sm leading-6 text-muted-foreground">
                             {target.role}
                           </span>
                           <span className="flex min-w-0 items-start gap-1.5 text-xs text-muted-foreground">
@@ -314,7 +316,43 @@ export default function EmailActionSection({ t }: EmailActionSectionProps) {
                       {customBody}
                     </pre>
                   </div>
-                  <div className="flex flex-col gap-2 sm:flex-row">
+                  <div className="grid gap-3">
+                    <a
+                      href={mailtoHref(selectedTargets, mailSubject, customBody)}
+                      className={cn(buttonVariants({ size: 'lg' }), 'w-full')}
+                    >
+                      <MailIcon data-icon="inline-start" />
+                      {t.targets.button}
+                    </a>
+                    <div className="flex items-center gap-3 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                      <span className="h-px flex-1 bg-border" />
+                      <span>{t.targets.or}</span>
+                      <span className="h-px flex-1 bg-border" />
+                    </div>
+                    <div className="grid gap-2 sm:grid-cols-2">
+                      <button
+                        type="button"
+                        onClick={() => {
+                          void copyText(
+                            selectedTargets.map((target) => target.email).join(', ')
+                          )
+                        }}
+                        className={cn(buttonVariants({ variant: 'outline', size: 'lg' }))}
+                      >
+                        <CopyIcon data-icon="inline-start" />
+                        {t.targets.copyRecipients}
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          void copyText(customBody)
+                        }}
+                        className={cn(buttonVariants({ variant: 'outline', size: 'lg' }))}
+                      >
+                        <CopyIcon data-icon="inline-start" />
+                        {t.targets.copyBody}
+                      </button>
+                    </div>
                     <button
                       type="button"
                       onClick={hidePreview}
@@ -322,35 +360,6 @@ export default function EmailActionSection({ t }: EmailActionSectionProps) {
                     >
                       {t.targets.back}
                     </button>
-                    <button
-                      type="button"
-                      onClick={() => {
-                        void copyText(
-                          selectedTargets.map((target) => target.email).join(', ')
-                        )
-                      }}
-                      className={cn(buttonVariants({ variant: 'outline', size: 'lg' }))}
-                    >
-                      <CopyIcon data-icon="inline-start" />
-                      {t.targets.copyRecipients}
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => {
-                        void copyText(customBody)
-                      }}
-                      className={cn(buttonVariants({ variant: 'outline', size: 'lg' }))}
-                    >
-                      <CopyIcon data-icon="inline-start" />
-                      {t.targets.copyBody}
-                    </button>
-                    <a
-                      href={mailtoHref(selectedTargets, mailSubject, customBody)}
-                      className={cn(buttonVariants({ size: 'lg' }), 'flex-1')}
-                    >
-                      <MailIcon data-icon="inline-start" />
-                      {t.targets.button}
-                    </a>
                   </div>
                 </>
               ) : (
