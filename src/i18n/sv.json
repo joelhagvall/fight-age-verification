@@ -21,7 +21,7 @@
   },
   "hero": {
     "title": "Internet ska inte kräva ID.",
-    "lead": "Flera regeringar går mot obligatoriska ålderskontroller på nätet. I praktiken kan det betyda att du måste visa ID för att läsa, skapa konto eller delta i digitala sammanhang.",
+    "lead": "Flera regeringar går mot obligatoriska ålderskontroller på nätet. I praktiken kan det betyda att du måste visa ID för att söka information, skapa konto eller delta i digitala sammanhang.",
     "primary": "Gör din röst hörd",
     "secondary": "Varför det spelar roll"
   },
@@ -112,15 +112,15 @@
   "questions": {
     "kicker": "Argumentet",
     "title": "Varför ID-krav slår fel",
-    "lead": "Barn ska skyddas online. Men lösningen kan inte vara att göra ID-kontroller till nyckeln för att läsa, lära sig, skapa eller delta i digitala sammanhang.",
+    "lead": "Barn ska skyddas online. Men lösningen kan inte vara att göra ID-kontroller till nyckeln för att söka stöd, lära sig, skapa eller delta i digitala sammanhang.",
     "items": [
       {
-        "question": "Vad försöker de göra?",
-        "answer": "Att göra det svårare för barn att komma åt sociala medier eller innehåll som anses olämpligt."
+        "question": "Vad föreslås?",
+        "answer": "Kräva att plattformar kontrollerar användares ålder innan de får tillgång till sociala medier, skapar konton, tittar på videor, går med i communities eller använder andra vardagliga delar av internet."
       },
       {
         "question": "Vad är problemet?",
-        "answer": "Ålderskontroller låter enkla, men blir ofta identitetskontroller. Då kan det börja krävas ID för att ta del av innehåll, skapa konton och delta på nätet."
+        "answer": "Åldersverifiering låter harmlöst: bevisa din ålder, få tillgång till sidan. Men den verkliga kostnaden är mycket större. Lagarna kan tvinga människor att lämna ifrån sig ID, ansiktsskanningar eller personuppgifter bara för att använda vardagliga delar av internet, vilket skapar nya risker för privatliv, yttrandefrihet och tillgång till information."
       },
       {
         "question": "Vem påverkas?",
@@ -135,7 +135,7 @@
   "scenarios": {
     "kicker": "Exempel",
     "title": "Vem påverkas egentligen?",
-    "lead": "Ett ID-krav låter tekniskt. I praktiken påverkar det vem som kan läsa, skapa, ställa frågor, delta i debatten och bygga något eget.",
+    "lead": "Ett ID-krav låter tekniskt. I praktiken påverkar det vem som kan söka information, skapa, ställa frågor, delta i debatten och bygga något eget.",
     "items": [
       {
         "id": "bullied",
@@ -194,7 +194,7 @@
     "copyRecipients": "Kopiera mottagare",
     "copied": "Kopierat.",
     "copyFailed": "Kunde inte kopiera. Markera texten manuellt.",
-    "shortBody": "Hej,\n\nJag skriver till dig för att be dig motsätta dig obligatorisk åldersverifiering och generella ID-kontroller för att använda internet.\n\nBarn ska skyddas online. Men lösningen kan inte vara att göra ID-kontroller till nyckeln för att läsa, lära sig, söka stöd, delta i gemenskaper eller vara med i debatten.\n\nDet här påverkar både barn och vuxna. Unga behöver kunna söka hjälp, lära sig, skapa, följa nyheter, bygga projekt och delta i samhället. Vuxna ska inte behöva visa ID för att läsa lagligt innehåll, söka privat eller delta i politisk debatt.\n\nVänligen stöd alternativ som riktar sig mot faktisk skada: grooming, exploatering, bedrägerier, trakasserier, osäkra standardinställningar, beroendeframkallande eller manipulativ design och svag brottsbekämpning. Barns säkerhet är viktig, men får inte användas för att ta bort privatliv, anonymitet och yttrandefrihet online.\n\nMed vänliga hälsningar,\n[namn]",
+    "shortBody": "Hej,\n\nJag skriver till dig för att be dig motsätta dig obligatorisk åldersverifiering och generella ID-kontroller för att använda internet.\n\nBarn ska skyddas online. Men lösningen kan inte vara att göra ID-kontroller till nyckeln för att söka information, lära sig, söka stöd, delta i gemenskaper eller vara med i debatten.\n\nDet här påverkar både barn och vuxna. Unga behöver kunna söka hjälp, lära sig, skapa, följa nyheter, bygga projekt och delta i samhället. Vuxna ska inte behöva visa ID för att läsa lagligt innehåll, söka privat eller delta i politisk debatt.\n\nVänligen stöd alternativ som riktar sig mot faktisk skada: grooming, exploatering, bedrägerier, trakasserier, osäkra standardinställningar, beroendeframkallande eller manipulativ design och svag brottsbekämpning. Barns säkerhet är viktig, men får inte användas för att ta bort privatliv, anonymitet och yttrandefrihet online.\n\nMed vänliga hälsningar,\n[namn]",
     "body": "Hej,\n\nJag skriver till dig för att be dig motsätta dig obligatorisk åldersverifiering och generella ID-kontroller för att använda internet.\n\nBarn ska skyddas online. Men generella ID-krav är fel väg. De riskerar att göra internet mindre privat, mindre fritt och svårare att använda för både unga och vuxna.\n\nFör unga kan anonym tillgång till information, stöd och communities vara viktig. Det gäller till exempel den som blir mobbad, mår dåligt hemma eller behöver fråga om något känsligt. Det gäller också unga som lär sig programmering, musik, AI, spelutveckling eller vill starta ett sidoprojekt. Mycket av det sker genom öppna resurser och forum.\n\nFör vuxna betyder åldersverifiering ofta att lagligt innehåll, privat informationssökning och politiskt deltagande börjar kräva ID. Det skapar också risker: dataläckor, övervakning, profilering och att systemet senare används till fler saker än det byggdes för.\n\nJag ber dig därför att stödja lösningar som riktar sig mot faktisk skada:\n\n- grooming, exploatering, bedrägerier och trakasserier,\n- bättre rapportering, moderering och brottsbekämpning,\n- säkrare standardinställningar och mindre beroendeframkallande eller manipulativ design,\n- privacy-by-design utan centraliserade ID-databaser,\n- barns rätt att söka information, uttrycka sig, lära sig och delta online.\n\nBarns säkerhet ska tas på allvar. Men den får inte bli ett argument för att göra internet beroende av identitetskontroller.\n\nVänligen säg nej till bred åldersverifiering och stöd alternativ som skyddar både barn och grundläggande friheter.\n\nMed vänliga hälsningar,\n[namn]",
     "groups": [
       {

@@ -21,7 +21,7 @@
   },
   "hero": {
     "title": "The internet should not require ID.",
-    "lead": "Governments are moving toward mandatory age checks online. In practice, that can mean showing ID to read, create accounts, or take part in digital spaces.",
+    "lead": "Governments are moving toward mandatory age checks online. In practice, that can mean showing ID to look up information, create accounts, or take part in digital spaces.",
     "primary": "Make your voice heard",
     "secondary": "Why this matters"
   },
@@ -112,15 +112,15 @@
   "questions": {
     "kicker": "The argument",
     "title": "Why ID checks miss the point",
-    "lead": "Children should be protected online. But the answer cannot be to make ID checks the key to reading, learning, creating, or taking part in digital spaces.",
+    "lead": "Children should be protected online. But the answer cannot be to make ID checks the key to seeking support, learning, creating, or taking part in digital spaces.",
     "items": [
       {
-        "question": "What are they trying to do?",
-        "answer": "Make it harder for children to access social media or content seen as unsuitable."
+        "question": "What is being proposed?",
+        "answer": "Require platforms to check users' ages before they can access social media, create accounts, watch videos, join communities, or use other everyday parts of the internet."
       },
       {
         "question": "What is the problem?",
-        "answer": "Age checks sound simple, but they often become identity checks. Accessing content, creating accounts, and taking part online can start depending on ID."
+        "answer": "Age verification sounds harmless: prove your age, access the site. But the real cost is much bigger. These laws can force people to hand over ID, face scans, or personal data just to use everyday parts of the internet, creating new risks for privacy, speech, and access to information."
       },
       {
         "question": "Who is affected?",
@@ -135,7 +135,7 @@
   "scenarios": {
     "kicker": "Scenarios",
     "title": "Who is actually affected?",
-    "lead": "An ID requirement sounds technical. In practice, it affects who can read, create, ask questions, join the debate, and build something of their own.",
+    "lead": "An ID requirement sounds technical. In practice, it affects who can look up information, create, ask questions, join the debate, and build something of their own.",
     "items": [
       {
         "id": "bullied",
@@ -194,7 +194,7 @@
     "copyRecipients": "Copy recipients",
     "copied": "Copied.",
     "copyFailed": "Could not copy. Select the text manually.",
-    "shortBody": "Hello,\n\nI am writing to ask you to oppose mandatory age verification and general ID checks for using the internet.\n\nChildren should be protected online. But the answer cannot be to make ID checks the key to reading, learning, seeking support, joining communities, or taking part in debate.\n\nThis affects children and adults. Young people need room to ask for help, learn, create, follow news, build projects, and participate in society. Adults should not have to show ID to read lawful content, search privately, or take part in political debate.\n\nPlease support alternatives that target actual harm: grooming, exploitation, fraud, harassment, unsafe defaults, addictive or manipulative design, and weak enforcement. Child safety matters, but it should not be used to remove privacy, anonymity, and free expression online.\n\nKind regards,\n[name]",
+    "shortBody": "Hello,\n\nI am writing to ask you to oppose mandatory age verification and general ID checks for using the internet.\n\nChildren should be protected online. But the answer cannot be to make ID checks the key to looking up information, learning, seeking support, joining communities, or taking part in debate.\n\nThis affects children and adults. Young people need room to ask for help, learn, create, follow news, build projects, and participate in society. Adults should not have to show ID to read lawful content, search privately, or take part in political debate.\n\nPlease support alternatives that target actual harm: grooming, exploitation, fraud, harassment, unsafe defaults, addictive or manipulative design, and weak enforcement. Child safety matters, but it should not be used to remove privacy, anonymity, and free expression online.\n\nKind regards,\n[name]",
     "body": "Hello,\n\nI am writing to ask you to oppose mandatory age verification and general ID checks for using the internet.\n\nChildren should be protected online. But general ID checks are the wrong route. They risk making the internet less private, less free, and harder to use for both young people and adults.\n\nFor young people, anonymous access to information, support, and communities can matter. That includes someone being bullied, someone unsafe at home, or someone who needs to ask about something sensitive. It also includes young people learning programming, music, AI, game development, or trying to start a side project. Much of that happens through open resources and forums.\n\nFor adults, age verification can mean that lawful content, private information seeking, and political participation start requiring ID. It also creates risks: data breaches, surveillance, profiling, and systems that later get used for more than they were built for.\n\nI ask you to support solutions that target actual harm:\n\n- grooming, exploitation, fraud, and harassment,\n- better reporting, moderation, and law enforcement,\n- safer defaults and less addictive or manipulative design,\n- privacy-by-design without centralised ID databases,\n- children’s right to seek information, express themselves, learn, and participate online.\n\nChild safety must be taken seriously. But it must not become an argument for making the internet depend on identity checks.\n\nPlease say no to broad age verification and support alternatives that protect both children and fundamental freedoms.\n\nKind regards,\n[name]",
     "groups": [
       {
