@@ -428,6 +428,8 @@
       "kicker": "Kontakt",
       "title": "Kontakt",
       "body": "Hittat ett fel, en starkare källa, en bättre mottagare eller en tydligare formulering? Skicka gärna ett förslag.",
+      "ctaTitle": "Föreslå en ändring",
+      "ctaBody": "Öppna GitHub-repot för att föreslå en rättelse, källa, mottagare eller bättre formulering.",
       "sections": [
         {
           "title": "Vad du kan skicka",
@@ -436,21 +438,9 @@
         {
           "title": "Håll det användbart",
           "body": "Konkreta förslag med källänk är lättast att kontrollera. Skriv gärna tillräckligt med sammanhang för att det ska gå att förstå vad som bör ändras och varför."
-        },
-        {
-          "title": "Byggd av",
-          "body": "Sidan är byggd fristående av Joel Hägvall.",
-          "link": "https://joelhagvall.com",
-          "href": "https://joelhagvall.com"
-        },
-        {
-          "title": "Källkod",
-          "body": "Projektet har öppen källkod. Du kan läsa koden eller föreslå ändringar på GitHub.",
-          "link": "https://github.com/joelhagvall/fight-age-verification",
-          "href": "https://github.com/joelhagvall/fight-age-verification"
         }
       ],
-      "link": "Kontakta via GitHub",
+      "link": "Föreslå en ändring på GitHub",
       "href": "https://github.com/joelhagvall/fight-age-verification"
     }
   }

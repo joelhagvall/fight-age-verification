@@ -13,6 +13,12 @@ export const Route = createFileRoute('/about')({
   component: About,
 })
 
+function hasSectionLink(
+  section: { title: string; body: string },
+): section is { title: string; body: string; href: string; link: string } {
+  return 'href' in section && 'link' in section
+}
+
 function About() {
   const { lang } = Route.useSearch()
   const { locale, t, toggleLocale } = useLocale(lang)
@@ -37,7 +43,7 @@ function About() {
               <p className="mt-3 leading-7 text-muted-foreground">
                 {section.body}
               </p>
-              {'href' in section ? (
+              {hasSectionLink(section) ? (
                 <ExternalLink
                   href={section.href}
                   className="nav-link mt-4 inline-flex break-all text-sm font-medium underline underline-offset-4"

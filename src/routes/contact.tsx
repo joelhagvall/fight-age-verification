@@ -13,6 +13,12 @@ export const Route = createFileRoute('/contact')({
   component: Contact,
 })
 
+function hasSectionLink(
+  section: { title: string; body: string },
+): section is { title: string; body: string; href: string; link: string } {
+  return 'href' in section && 'link' in section
+}
+
 function Contact() {
   const { lang } = Route.useSearch()
   const { locale, t, toggleLocale } = useLocale(lang)
@@ -28,7 +34,21 @@ function Contact() {
         <p className="mt-6 text-lg leading-8 text-muted-foreground">
           {t.pages.contact.body}
         </p>
-        <div className="mt-12 grid gap-6 text-left">
+        <section className="mt-12 rounded-lg border p-6 text-left">
+          <h2 className="text-xl font-semibold tracking-tight">
+            {t.pages.contact.ctaTitle}
+          </h2>
+          <p className="mt-3 leading-7 text-muted-foreground">
+            {t.pages.contact.ctaBody}
+          </p>
+          <ExternalLink
+            href={t.pages.contact.href}
+            className="nav-link mt-4 inline-flex break-all text-sm font-medium underline underline-offset-4"
+          >
+            {t.pages.contact.link}
+          </ExternalLink>
+        </section>
+        <div className="mt-6 grid gap-6 text-left">
           {t.pages.contact.sections.map((section) => (
             <section key={section.title} className="rounded-lg border p-6">
               <h2 className="text-xl font-semibold tracking-tight">
@@ -37,7 +57,7 @@ function Contact() {
               <p className="mt-3 leading-7 text-muted-foreground">
                 {section.body}
               </p>
-              {'href' in section ? (
+              {hasSectionLink(section) ? (
                 <ExternalLink
                   href={section.href}
                   className="nav-link mt-4 inline-flex break-all text-sm font-medium underline underline-offset-4"

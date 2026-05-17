@@ -428,6 +428,8 @@
       "kicker": "Contact",
       "title": "Contact",
       "body": "Found a mistake, a stronger source, a better recipient, or clearer wording? Send a suggestion.",
+      "ctaTitle": "Suggest a change",
+      "ctaBody": "Open the GitHub repository to propose a correction, source, recipient, or wording improvement.",
       "sections": [
         {
           "title": "What to send",
@@ -436,21 +438,9 @@
         {
           "title": "Keep it practical",
           "body": "Concrete suggestions with a source link are easiest to check. Please include enough context to understand what should change and why."
-        },
-        {
-          "title": "Built by",
-          "body": "The site is built independently by Joel Hägvall.",
-          "link": "https://joelhagvall.com",
-          "href": "https://joelhagvall.com"
-        },
-        {
-          "title": "Source code",
-          "body": "The project is open source. You can read the code or suggest changes on GitHub.",
-          "link": "https://github.com/joelhagvall/fight-age-verification",
-          "href": "https://github.com/joelhagvall/fight-age-verification"
         }
       ],
-      "link": "Contact on GitHub",
+      "link": "Suggest a change on GitHub",
       "href": "https://github.com/joelhagvall/fight-age-verification"
     }
   }
